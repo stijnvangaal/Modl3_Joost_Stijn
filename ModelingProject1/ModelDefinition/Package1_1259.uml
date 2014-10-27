@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="36b791b7-d8ef-4717-a981-cda758c8496f"
+  name="Controller" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="737a3a76-f7c9-4311-85d6-46e28bc35c99"
+        name="Game"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="12fee2ac-9fd2-4963-ac19-58318828dee5"
+        name="Application"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="e222413f-9d1f-48ee-a74f-ee01a10b019e"
+            isDerived="false"
+            sourceEndRoleName="Application"
+            targetEndRoleName="View"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="fabcd8f2-255a-4b2c-ac6e-d20de0343cd3"
+              LastKnownName="View"
+              LastKnownLocation="Package_1259.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="3f858498-e6e2-445a-8822-3e469cc7614b"
+                  name="Application"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="b1123d3c-df34-4859-9c34-bc8686a57c46"
+                  name="View"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="5dd2c5ae-8048-4071-8820-ca1f16474a12"
+            isDerived="false"
+            sourceEndRoleName="Application"
+            targetEndRoleName="Game"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="b2755150-8baf-4fdf-9ed5-03dc07f211dc"
+              LastKnownName="Game"
+              LastKnownLocation="Package_1306.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="40ef9b92-b77f-4d9a-9699-78afd49a9f66"
+                  name="Application"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="fa841c7b-096d-473f-8190-c949770d24a5"
+                  name="Game"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>
