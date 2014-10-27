@@ -93,6 +93,16 @@
                     </associationHasOwnedEnds>
                     <associationHasOwnedEnds>
                       <memberEnd Id="ac735449-0177-4155-aa23-6ac12a9d8b6d" name="Cart" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                        <lowerValueInternal>
+                          <literalString Id="b36f3ea0-e085-42c7-ab2e-6fa94a03c3d3" name="Lower" value="n">
+                            <elementDefinition Id="34d878b3-71a0-425c-9811-28780050baae" />
+                          </literalString>
+                        </lowerValueInternal>
+                        <upperValueInternal>
+                          <literalString Id="1f230389-4fd8-4a9b-9fec-0efd1cac88e1" name="Upper" value="n">
+                            <elementDefinition Id="d6544ae7-0d0a-49cd-9241-ec01a1c4ebb7" />
+                          </literalString>
+                        </upperValueInternal>
                         <elementDefinition Id="81ed1c46-20a9-4a60-accd-2fdab0b5292d" />
                       </memberEnd>
                     </associationHasOwnedEnds>
@@ -100,7 +110,7 @@
                   <elementDefinition Id="a3e7756e-c326-45fc-8a78-df808fb123e0" />
                 </association>
                 <association Id="5a69f9a5-4d49-4d53-9400-22e231ea43fd" isDerived="false" sourceEndRoleName="Game" targetEndRoleName="Ship" isLeaf="false" isAbstract="false">
-                  <classMoniker Id="3d1525c2-5257-4559-ae1f-99d5207fff6a" LastKnownName="Ship" />
+                  <classMoniker Id="3d1525c2-5257-4559-ae1f-99d5207fff6a" LastKnownName="Boat" />
                   <relationshipOwnedElementsInternal>
                     <associationHasOwnedEnds>
                       <memberEnd Id="4a4e0aa9-e452-45c1-b396-e5bbfcc62e70" name="Game" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
@@ -109,6 +119,16 @@
                     </associationHasOwnedEnds>
                     <associationHasOwnedEnds>
                       <memberEnd Id="9cba6b15-f52e-46be-a44c-45e8221318cf" name="Ship" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                        <lowerValueInternal>
+                          <literalString Id="de57a6d6-ec63-4b51-94e3-1d5fc9ffa703" name="Lower" value="n">
+                            <elementDefinition Id="e6d23029-7030-4d27-9762-ff32f7580312" />
+                          </literalString>
+                        </lowerValueInternal>
+                        <upperValueInternal>
+                          <literalString Id="6886dff0-78e8-4fae-b083-03c23a8c73d4" name="Upper" value="n">
+                            <elementDefinition Id="23999f7e-51f6-43a8-9801-db43bbdb857c" />
+                          </literalString>
+                        </upperValueInternal>
                         <elementDefinition Id="e2ff0f41-17d7-4c1a-b3b2-cab7897471bc" />
                       </memberEnd>
                     </associationHasOwnedEnds>
@@ -149,11 +169,31 @@
                   <relationshipOwnedElementsInternal>
                     <associationHasOwnedEnds>
                       <memberEnd Id="8b1019a2-5672-4fb6-b11c-e8ee25206ef4" name="Tile" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                        <lowerValueInternal>
+                          <literalString Id="d7548e4a-af3a-40f9-8b67-8d4cdb5c789e" name="Lower" value="0">
+                            <elementDefinition Id="2f7aaaaf-ae63-41db-8a18-c39f2d6ce534" />
+                          </literalString>
+                        </lowerValueInternal>
+                        <upperValueInternal>
+                          <literalString Id="c2dd4d61-7f27-418f-9a5f-2202b2bb0a19" name="Upper" value="2">
+                            <elementDefinition Id="8a49f1a2-f99b-4ce7-a9bc-e7cdb9e82219" />
+                          </literalString>
+                        </upperValueInternal>
                         <elementDefinition Id="6f02f3d0-7757-4189-afbf-c81776eb0a5d" />
                       </memberEnd>
                     </associationHasOwnedEnds>
                     <associationHasOwnedEnds>
                       <memberEnd Id="82c3a837-86e4-4f36-bc5e-38e8080ac7b5" name="Tile" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                        <lowerValueInternal>
+                          <literalString Id="5ba889ec-81bd-46a7-b467-4c8dae366f7a" name="Lower" value="0">
+                            <elementDefinition Id="ac3b354c-57d7-4508-8f24-fa4264d9d1f6" />
+                          </literalString>
+                        </lowerValueInternal>
+                        <upperValueInternal>
+                          <literalString Id="e98c90c7-b080-4317-8aee-90369e446b64" name="Upper" value="2">
+                            <elementDefinition Id="3b48b209-9b38-463f-9f7f-5f4454052fca" />
+                          </literalString>
+                        </upperValueInternal>
                         <elementDefinition Id="3073c208-3846-4a59-a308-4435dcdb38e1" />
                       </memberEnd>
                     </associationHasOwnedEnds>
@@ -169,7 +209,7 @@
             </class>
           </packageHasNamedElement>
           <packageHasNamedElement>
-            <class Id="3d1525c2-5257-4559-ae1f-99d5207fff6a" name="Ship" isAbstract="false" isLeaf="false" isActiveClass="false">
+            <class Id="3d1525c2-5257-4559-ae1f-99d5207fff6a" name="Boat" isAbstract="false" isLeaf="false" isActiveClass="false">
               <elementDefinition Id="c1700747-90c6-423c-b474-eb2490a28f95" />
             </class>
           </packageHasNamedElement>

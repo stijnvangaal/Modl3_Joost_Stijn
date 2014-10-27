@@ -86,7 +86,20 @@
                   isDerived="false"
                   isDerivedUnion="false"
                   aggregation="None"
-                  isComposite="false" />
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="34d878b3-71a0-425c-9811-28780050baae"
+                      name="Lower"
+                      value="n" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="d6544ae7-0d0a-49cd-9241-ec01a1c4ebb7"
+                      name="Upper"
+                      value="n" />
+                  </upperValueInternal>
+                </memberEnd>
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
@@ -99,7 +112,7 @@
             isAbstract="false">
             <classMoniker
               Id="c1700747-90c6-423c-b474-eb2490a28f95"
-              LastKnownName="Ship"
+              LastKnownName="Boat"
               LastKnownLocation="Package_1306.uml" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
@@ -125,7 +138,20 @@
                   isDerived="false"
                   isDerivedUnion="false"
                   aggregation="None"
-                  isComposite="false" />
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="e6d23029-7030-4d27-9762-ff32f7580312"
+                      name="Lower"
+                      value="n" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="23999f7e-51f6-43a8-9801-db43bbdb857c"
+                      name="Upper"
+                      value="n" />
+                  </upperValueInternal>
+                </memberEnd>
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
@@ -201,7 +227,20 @@
                   isDerivedUnion="false"
                   aggregation="None"
                   isComposite="false"
-                  isNavigableOwned="false" />
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="2f7aaaaf-ae63-41db-8a18-c39f2d6ce534"
+                      name="Lower"
+                      value="0" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="8a49f1a2-f99b-4ce7-a9bc-e7cdb9e82219"
+                      name="Upper"
+                      value="2" />
+                  </upperValueInternal>
+                </memberEnd>
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd
@@ -213,7 +252,20 @@
                   isDerived="false"
                   isDerivedUnion="false"
                   aggregation="None"
-                  isComposite="false" />
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="ac3b354c-57d7-4508-8f24-fa4264d9d1f6"
+                      name="Lower"
+                      value="0" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="3b48b209-9b38-463f-9f7f-5f4454052fca"
+                      name="Upper"
+                      value="2" />
+                  </upperValueInternal>
+                </memberEnd>
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
@@ -231,7 +283,7 @@
     <packageHasNamedElement>
       <class
         Id="c1700747-90c6-423c-b474-eb2490a28f95"
-        name="Ship"
+        name="Boat"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false" />
