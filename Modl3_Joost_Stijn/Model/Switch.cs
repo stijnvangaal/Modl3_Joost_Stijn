@@ -26,7 +26,7 @@ namespace Modl3_Joost_Stijn.Model
             NextDown = newNextDown;
         }
 
-        public void Switch()
+        public void change()
         {
             Up = !Up;
             if(IsSplit)
