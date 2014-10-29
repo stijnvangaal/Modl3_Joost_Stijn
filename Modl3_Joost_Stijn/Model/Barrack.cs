@@ -5,8 +5,11 @@ using System.Text;
 
 namespace Modl3_Joost_Stijn.Model
 {
-    class Barrack
+    class Barrack : Track
     {
-        public Track Next { get; set; }
+        public void newCart()
+        {
+            Cart = new Cart();
+        }
     }
 }

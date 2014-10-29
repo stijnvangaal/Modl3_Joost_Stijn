@@ -7,7 +7,16 @@ namespace Modl3_Joost_Stijn.Model
 {
     class Coast : Track
     {
-        public Boolean UpperCoast { get; set; }
-        public Boolean HasBoat { get; set; }
+        public Water MyWater { get; set; }
+
+        public void loadBoat(){
+            if (Cart != null && MyWater.MyBoat != null)
+            {
+                Cart.unLoad();
+                MyWater.MyBoat.load();
+            }
+        }
+
+
     }
 }

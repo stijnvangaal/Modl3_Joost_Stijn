@@ -21,5 +21,9 @@ namespace Modl3_Joost_Stijn.Model
         public Barrack BarrackC { get; set; }
         public Water FirstDownWater { get; set; }
 
+
+
+
+
     }
 }
