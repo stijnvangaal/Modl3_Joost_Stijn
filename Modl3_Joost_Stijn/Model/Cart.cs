@@ -7,5 +7,8 @@ namespace Modl3_Joost_Stijn.Model
 {
     class Cart
     {
+        public int Cargo { get; set; }
+
+
     }
 }

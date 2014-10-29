@@ -44,9 +44,9 @@
     <Compile Include="Controller\Application.cs" />
     <Compile Include="Model\Boat.cs" />
     <Compile Include="Model\Cart.cs" />
+    <Compile Include="Model\Coast.cs" />
     <Compile Include="Model\Game.cs" />
     <Compile Include="Model\Switch.cs" />
-    <Compile Include="Model\Tile.cs" />
     <Compile Include="Model\Track.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
