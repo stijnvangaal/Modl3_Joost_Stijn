@@ -37,25 +37,43 @@ namespace Modl3_Joost_Stijn.View
 
         private void drawWater(Water firstWater)
         {
-            Water current = firstWater;
-            while (current != null)
+            Water currentWater = firstWater;
+            while (currentWater != null)
             {
-                if (current.Previous != null && current.Next != null)
+                if (currentWater.Previous != null && currentWater.Next != null)
                 {
-                    if (current.Next.MyBoat != null) { Console.Write("<"); }
-                    else if (current.MyBoat != null) { Console.Write(current.MyBoat.Cargo); }
-                    else if (current.Previous.MyBoat != null) { Console.Write(">"); }
+                    if (currentWater.Next.MyBoat != null) { Console.Write("<"); }
+                    else if (currentWater.MyBoat != null) { Console.Write(currentWater.MyBoat.Cargo); }
+                    else if (currentWater.Previous.MyBoat != null) { Console.Write(">"); }
                     else { Console.Write("~"); }
                 }
-                else if(current.Previous == null)
+                else if(currentWater.Previous == null)
                 {
-                    if (current.Next.MyBoat != null) { Console.Write("<"); }
-                    else if (current.MyBoat != null) { Console.Write(current.MyBoat.Cargo); }
+                    if (currentWater.Next.MyBoat != null) { Console.Write("<"); }
+                    else if (currentWater.MyBoat != null) { Console.Write(currentWater.MyBoat.Cargo); }
                     else { Console.Write("~"); }
                 }
-                else if (current.Next == null) { Console.Write("~");}
-                current = current.Next;
+                else if (currentWater.Next == null) { Console.Write("~");}
+                currentWater = currentWater.Next;
             }
+            Console.WriteLine();
+
+            String domain = "Modl3_Joost_Stijn.Model.";
+
+            Console.Write("A");
+            Track currentTrack = BarrackA.Next;
+            while (currentTrack != null)
+            {
+                if (currentTrack.Cart == null)
+                {
+                    if ("" + currentTrack.GetType() == domain + "Track") { Console.Write("-"); }
+                    else if ("" + currentTrack.GetType() == domain + "Switch") { Console.Write("s"); }
+                    else if ("" + currentTrack.GetType() == domain + "Coast") { Console.Write("K"); }
+                }
+
+                currentTrack = currentTrack.Next;
+            }
+
             Console.ReadLine();
         }
 
