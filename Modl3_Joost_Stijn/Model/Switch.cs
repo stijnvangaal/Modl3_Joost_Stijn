@@ -17,7 +17,21 @@ namespace Modl3_Joost_Stijn.Model
 
         public Switch(Boolean isSplit)
         {
-            
+            Up = true;
+            if (isSplit)
+            {
+                IsSplit = true;
+            }
+            else
+            {
+                IsSplit = false;
+            }
+        }
+
+        public void previous(Track newPreviousUp, Track newPreviousDown)
+        {
+            PreviousUp = newPreviousUp;
+            PreviousDown = newPreviousDown;
         }
 
         public void next(Track newNextUp, Track newNextDown)

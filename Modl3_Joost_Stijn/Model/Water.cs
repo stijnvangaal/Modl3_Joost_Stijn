@@ -11,6 +11,49 @@ namespace Modl3_Joost_Stijn.Model
         public Water Next { get; set; }
         public Water Previous { get; set; }
         public Boat MyBoat { get; set; }
-        public Boolean isCoast { get; set; }
+        public Boolean IsCoast { get; set; }
+        public Boolean IsLast { get; set; }
+        public Boolean IsFirst { get; set; }
+
+        public void newBoat()
+        {
+            if (IsFirst)
+            {
+                MyBoat = new Boat();
+            }
+        }
+        public void moveBoat()
+        {
+            
+            if (Next == null)
+            {
+                if (IsLast)
+                {
+                    MyBoat = null;
+                }
+            }
+            else if (IsCoast)
+            {
+                if (MyBoat.Cargo == MyBoat.Capacity)
+                 {
+                       if (Next.MyBoat == null)
+                     {
+                        Next.MyBoat = MyBoat;
+                        MyBoat = null;
+                    }
+                    
+                }
+            } 
+            else
+            {
+                if (Next.MyBoat == null)
+                {
+                    Next.MyBoat = MyBoat;
+                    MyBoat = null;
+                }
+              
+            }
+        }
+
     }
 }
