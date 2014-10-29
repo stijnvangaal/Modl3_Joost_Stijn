@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Modl3_Joost_Stijn.Controller;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,6 +10,7 @@ namespace Modl3_Joost_Stijn
     {
         static void Main(string[] args)
         {
+            new Application();
         }
     }
 }

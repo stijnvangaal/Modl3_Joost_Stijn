@@ -42,12 +42,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\Application.cs" />
+    <Compile Include="Model\Barrack.cs" />
     <Compile Include="Model\Boat.cs" />
     <Compile Include="Model\Cart.cs" />
     <Compile Include="Model\Coast.cs" />
     <Compile Include="Model\Game.cs" />
     <Compile Include="Model\Switch.cs" />
     <Compile Include="Model\Track.cs" />
+    <Compile Include="Model\Water.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="View\View.cs" />
