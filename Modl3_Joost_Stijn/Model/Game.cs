@@ -32,6 +32,7 @@ namespace Modl3_Joost_Stijn.Model
             Water previous = FirstUpperWater;
             Water current           = null;
             Water upperCoastWater   = null;
+            Water bottomCoastWater = null;
 
             Switch switch1          = null;
             Switch switch2          = null;
@@ -46,7 +47,23 @@ namespace Modl3_Joost_Stijn.Model
                 current.Previous = previous;
                 previous.Next = current;
 
-                if (i == 17) { upperCoastWater = current; current.isCoast = true; }
+                if (i == 16) { upperCoastWater = current; current.IsCoast = true; current.MyBoat = new Boat(); }
+
+                previous = current;
+            }
+
+            FirstDownWater = new Water();
+            previous = FirstDownWater;
+            current = null;
+
+            //Bottomline of water
+            for (int i = 0; i < 30; i++)
+            {
+                current = new Water();
+                current.Previous = previous;
+                previous.Next = current;
+
+                if (i == 14) { bottomCoastWater = current; current.IsCoast = true; current.MyBoat = new Boat(); }
 
                 previous = current;
             }
@@ -60,18 +77,18 @@ namespace Modl3_Joost_Stijn.Model
             currentTrack.Next = new Track();
             currentTrack = currentTrack.Next;
 
-            //first switch
+            //switch 1 UP
             switch1 = new Switch(false);
             currentTrack.Next = switch1;
             switch1.PreviousUp = currentTrack;
-            switch1.Up = true;
+            switch1.Up = false;
             switch1.Previous = switch1.PreviousUp;
             currentTrack = switch1;
 
             currentTrack.Next = new Track();
             currentTrack = currentTrack.Next;
 
-            //second switch
+            //switch 2 UP
             switch2 = new Switch(true);
             currentTrack.Next = switch2;
             switch2.Previous = currentTrack;
@@ -88,7 +105,7 @@ namespace Modl3_Joost_Stijn.Model
 
             }
 
-            //fifth switch
+            //switch 5 UP
             switch5 = new Switch(false);
             currentTrack.Next = switch5;
             switch5.PreviousUp = currentTrack;
@@ -96,27 +113,100 @@ namespace Modl3_Joost_Stijn.Model
             switch5.Previous = switch5.PreviousUp;
             currentTrack = switch5;
 
-
             for (int i = 0; i < 12; i++)
             {
                 if (i == 7)
                 {
                     Coast coast = new Coast();
                     currentTrack.Next = coast;
-                    coast.myWater = upperCoastWater;
-
+                    coast.MyWater = upperCoastWater;
                 }
                 else
                 {
                     currentTrack.Next = new Track();
                 }
-                
                 currentTrack = currentTrack.Next;
             }
 
-            for (int i = 0; i < 3; i++)
-            {
+            //starting from Barrack B
+            BarrackB = new Barrack();
+            currentTrack = new Track();
+            BarrackB.Next = currentTrack;
+            currentTrack.Next = new Track();
+            currentTrack = currentTrack.Next;
+            currentTrack.Next = new Track();
+            currentTrack = currentTrack.Next;
 
+            //switch 1 DOWN
+            currentTrack.Next = switch1;
+            switch1.PreviousDown = currentTrack;
+
+            //switch 2 DOWN
+            switch2.NextDown = new Track();
+            currentTrack = switch2.NextDown;
+            currentTrack.Next = new Track();
+            currentTrack = currentTrack.Next;
+
+            //switch 3 UP
+            switch3 = new Switch(false);
+            currentTrack.Next = switch3;
+            switch3.PreviousUp = currentTrack;
+            switch3.Up = true;
+            switch3.Previous = switch3.PreviousUp;
+            currentTrack = switch3;
+
+            currentTrack.Next = new Track();
+            currentTrack = currentTrack.Next;
+
+            //switch 4 UP
+            switch4 = new Switch(true);
+            currentTrack.Next = switch4;
+            switch4.Previous = currentTrack;
+            switch4.Up = false;
+            currentTrack = switch4;
+            currentTrack.Next = new Track();
+            switch4.NextUp = currentTrack.Next;
+            currentTrack = currentTrack.Next;
+
+            currentTrack.Next = new Track();
+            currentTrack = currentTrack.Next;
+
+            //switch 5 DOWN
+            currentTrack.Next = switch5;
+            switch5.PreviousDown = currentTrack;
+
+            //starting from Barrack C
+            BarrackC = new Barrack();
+            currentTrack = new Track();
+            BarrackC.Next = currentTrack;
+
+            for (int i = 0; i < 5; i++)
+            {
+                currentTrack.Next = new Track();
+                currentTrack = currentTrack.Next;
+            }
+
+            //switch 3 DOWN
+            currentTrack.Next = switch3;
+            switch3.PreviousDown = currentTrack;
+
+            //switch 4 DOWN
+            switch4.NextDown = new Track();
+            currentTrack = switch4.NextDown;
+
+            for (int i = 0; i < 12; i++)
+            {
+                if (i == 6)
+                {
+                    Coast coast = new Coast();
+                    currentTrack.Next = coast;
+                    coast.MyWater = bottomCoastWater;
+                }
+                else
+                {
+                    currentTrack.Next = new Track();
+                }
+                currentTrack = currentTrack.Next;
             }
         }
 
