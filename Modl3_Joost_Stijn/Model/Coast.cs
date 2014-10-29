@@ -8,6 +8,6 @@ namespace Modl3_Joost_Stijn.Model
     class Coast : Track
     {
         public Boolean UpperCoast { get; set; }
-        public Boolean HasBoat { get; set; }
+        public Water myWater { get; set; }
     }
 }

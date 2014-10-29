@@ -18,6 +18,7 @@ namespace Modl3_Joost_Stijn.Controller
             myGame = new Game();
 
             myView.setField(myGame.FirstUpperWater, myGame.BarrackA, myGame.BarrackB, myGame.BarrackC, myGame.FirstDownWater);
+            myView.drawField();
         }
     }
 }
