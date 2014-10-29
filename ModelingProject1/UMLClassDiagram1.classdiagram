@@ -83,6 +83,22 @@
                   </relationshipOwnedElementsInternal>
                   <elementDefinition Id="89e52749-8ee2-4fda-9b95-5bfcb9aef7dd" />
                 </association>
+                <association Id="58540b10-84f7-4fcb-ad5e-7b09b766b751" isDerived="false" sourceEndRoleName="Game" targetEndRoleName="Water" isLeaf="false" isAbstract="false">
+                  <classMoniker Id="0a00192b-3315-4673-bc48-5db1ad0b096a" LastKnownName="Water" />
+                  <relationshipOwnedElementsInternal>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="1c849fb5-5686-40e8-a2bc-76ad03eebe11" name="Game" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                        <elementDefinition Id="9da9409a-ad41-48ed-83a0-7f694b182c10" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="e6165237-810b-46d6-a42b-2e5b353974ba" name="Water" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                        <elementDefinition Id="8dc9876e-f463-4c65-8a52-ca01d505e087" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                  </relationshipOwnedElementsInternal>
+                  <elementDefinition Id="e87b3957-4098-453b-9686-678ce625bd86" />
+                </association>
               </targetEnds>
             </class>
           </packageHasNamedElement>
@@ -211,6 +227,65 @@
                     </associationHasOwnedEnds>
                   </relationshipOwnedElementsInternal>
                   <elementDefinition Id="a8aba663-3425-4458-9d45-f5d71bc17f92" />
+                </association>
+              </targetEnds>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="0a00192b-3315-4673-bc48-5db1ad0b096a" name="Water" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="ff2f7895-d031-44d6-b0a4-efc7c9ad14d3" />
+              <targetEnds>
+                <association Id="a922df0f-da3f-4e25-9529-f3334db92748" isDerived="false" sourceEndRoleName="Water" targetEndRoleName="Water" isLeaf="false" isAbstract="false">
+                  <classMoniker Id="0a00192b-3315-4673-bc48-5db1ad0b096a" LastKnownName="Water" />
+                  <relationshipOwnedElementsInternal>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="9ea20f8f-34c3-48e7-a6de-5160f1aaded1" name="Water" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                        <elementDefinition Id="525028e1-8224-4bf4-af89-c5473003cd7d" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="a96ebf73-adf9-4316-996d-a3b584360b30" name="Water" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                        <lowerValueInternal>
+                          <literalString Id="086852d4-743e-488f-a429-e8e1779bf63c" name="Lower" value="2">
+                            <elementDefinition Id="bb77da03-966e-4e38-8f03-7ef8158170bb" />
+                          </literalString>
+                        </lowerValueInternal>
+                        <upperValueInternal>
+                          <literalString Id="6a69d5c8-f8dd-488c-90e0-2f113d055cfe" name="Upper" value="2">
+                            <elementDefinition Id="108bbc5d-f04e-4d56-b330-323e19c07493" />
+                          </literalString>
+                        </upperValueInternal>
+                        <elementDefinition Id="4d4b7ded-028d-4b0c-a144-6381cdb4989d" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                  </relationshipOwnedElementsInternal>
+                  <elementDefinition Id="e51f739d-431a-471a-9252-cc2075cd5238" />
+                </association>
+                <association Id="6f6d0522-3b11-4a82-8789-fc23d735fbc4" isDerived="false" sourceEndRoleName="Water" targetEndRoleName="Boat" isLeaf="false" isAbstract="false">
+                  <classMoniker Id="3d1525c2-5257-4559-ae1f-99d5207fff6a" LastKnownName="Boat" />
+                  <relationshipOwnedElementsInternal>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="51021b77-fe0d-419a-ad4d-7ac5a1b6dc21" name="Water" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                        <elementDefinition Id="21314219-c5c8-4640-abf7-e103d817a30e" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="dfd2cfc1-bdd8-422b-b8cc-8a3a34a0a8e6" name="Boat" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                        <lowerValueInternal>
+                          <literalString Id="09437c4d-70a4-4313-814d-60548bf4d4bd" name="Lower" value="0">
+                            <elementDefinition Id="cf7872d0-77ed-4ca8-b400-a357084154a0" />
+                          </literalString>
+                        </lowerValueInternal>
+                        <upperValueInternal>
+                          <literalString Id="14e7410b-04e8-4427-8f29-747262166a11" name="Upper" value="1">
+                            <elementDefinition Id="9aa29ba0-659f-4f32-94bd-37f344fde3f3" />
+                          </literalString>
+                        </upperValueInternal>
+                        <elementDefinition Id="cfb89a70-e3b0-4d65-af32-bc9092bb073b" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                  </relationshipOwnedElementsInternal>
+                  <elementDefinition Id="1aea6a53-0c14-475f-875c-e9366e8aaeab" />
                 </association>
               </targetEnds>
             </class>

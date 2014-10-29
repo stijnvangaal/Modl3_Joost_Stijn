@@ -7,5 +7,7 @@ namespace Modl3_Joost_Stijn.Model
 {
     class Track
     {
+
+        public Track Next { get; set; }
     }
 }

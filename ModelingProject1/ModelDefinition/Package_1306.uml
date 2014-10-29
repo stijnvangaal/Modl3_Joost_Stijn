@@ -90,6 +90,45 @@
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
+          <association
+            Id="e87b3957-4098-453b-9686-678ce625bd86"
+            isDerived="false"
+            sourceEndRoleName="Game"
+            targetEndRoleName="Water"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="ff2f7895-d031-44d6-b0a4-efc7c9ad14d3"
+              LastKnownName="Water"
+              LastKnownLocation="Package_1306.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="9da9409a-ad41-48ed-83a0-7f694b182c10"
+                  name="Game"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="8dc9876e-f463-4c65-8a52-ca01d505e087"
+                  name="Water"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
         </targetEnds>
       </class>
     </packageHasNamedElement>
@@ -413,6 +452,121 @@
                   <upperValueInternal>
                     <literalString
                       Id="41c83520-cb2c-4445-b110-d8a0c663d569"
+                      name="Upper"
+                      value="1" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="ff2f7895-d031-44d6-b0a4-efc7c9ad14d3"
+        name="Water"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="e51f739d-431a-471a-9252-cc2075cd5238"
+            isDerived="false"
+            sourceEndRoleName="Water"
+            targetEndRoleName="Water"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="ff2f7895-d031-44d6-b0a4-efc7c9ad14d3"
+              LastKnownName="Water"
+              LastKnownLocation="Package_1306.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="525028e1-8224-4bf4-af89-c5473003cd7d"
+                  name="Water"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="4d4b7ded-028d-4b0c-a144-6381cdb4989d"
+                  name="Water"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="bb77da03-966e-4e38-8f03-7ef8158170bb"
+                      name="Lower"
+                      value="2" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="108bbc5d-f04e-4d56-b330-323e19c07493"
+                      name="Upper"
+                      value="2" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="1aea6a53-0c14-475f-875c-e9366e8aaeab"
+            isDerived="false"
+            sourceEndRoleName="Water"
+            targetEndRoleName="Boat"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="c1700747-90c6-423c-b474-eb2490a28f95"
+              LastKnownName="Boat"
+              LastKnownLocation="Package_1306.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="21314219-c5c8-4640-abf7-e103d817a30e"
+                  name="Water"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="cfb89a70-e3b0-4d65-af32-bc9092bb073b"
+                  name="Boat"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="cf7872d0-77ed-4ca8-b400-a357084154a0"
+                      name="Lower"
+                      value="0" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="9aa29ba0-659f-4f32-94bd-37f344fde3f3"
                       name="Upper"
                       value="1" />
                   </upperValueInternal>

@@ -5,7 +5,8 @@ using System.Text;
 
 namespace Modl3_Joost_Stijn.Model
 {
-    class Tile
+    class Barrack
     {
+        public Track Next { get; set; }
     }
 }

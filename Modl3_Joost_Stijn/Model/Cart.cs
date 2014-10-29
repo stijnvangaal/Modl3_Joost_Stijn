@@ -7,5 +7,6 @@ namespace Modl3_Joost_Stijn.Model
 {
     class Cart
     {
+        public Boolean Loaded { get; set; }
     }
 }

@@ -5,9 +5,9 @@ using System.Text;
 
 namespace Modl3_Joost_Stijn.Model
 {
-    class Switch : Track
+    class Coast : Track
     {
-
-        public Boolean Up { get; set; }
+        public Boolean UpperCoast { get; set; }
+        public Boolean HasBoat { get; set; }
     }
 }
