@@ -15,6 +15,11 @@ namespace Modl3_Joost_Stijn.Model
         public Track PreviousUp { get; set; }
         public Track PreviousDown { get; set; }
 
+        public Switch(Boolean isSplit)
+        {
+            
+        }
+
         public void next(Track newNextUp, Track newNextDown)
         {
             NextUp = newNextUp;
