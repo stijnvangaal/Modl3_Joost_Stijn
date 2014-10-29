@@ -9,5 +9,38 @@ namespace Modl3_Joost_Stijn.Model
     {
 
         public Track Next { get; set; }
+        public Cart Cart { get; set; }
+        public Boolean IsLast { get; set; }
+
+
+
+        public void next(Track newNext){
+            Next = newNext;
+        }
+
+        public void moveCart()
+        {
+            if (Next == null)
+        	{
+                if (IsLast)
+                {
+                    Cart = null;
+                }
+            }
+            else
+            {
+                if (Next.Cart == null)
+                {
+                    Next.Cart = Cart;
+                    Cart = null;
+                }
+                else
+                {
+                    Console.WriteLine(" Game Over");
+                }
+            }
+
+        }
+
     }
 }
