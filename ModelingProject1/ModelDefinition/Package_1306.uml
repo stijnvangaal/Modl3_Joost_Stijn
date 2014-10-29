@@ -52,20 +52,20 @@
             </relationshipOwnedElementsInternal>
           </association>
           <association
-            Id="a3e7756e-c326-45fc-8a78-df808fb123e0"
+            Id="89e52749-8ee2-4fda-9b95-5bfcb9aef7dd"
             isDerived="false"
             sourceEndRoleName="Game"
-            targetEndRoleName="Cart"
+            targetEndRoleName="Track"
             isLeaf="false"
             isAbstract="false">
             <classMoniker
-              Id="ab699449-141d-4390-b7fb-b3cac8171aef"
-              LastKnownName="Cart"
+              Id="89d342cd-b8e4-4c50-875b-4d3fc1d7a665"
+              LastKnownName="Track"
               LastKnownLocation="Package_1306.uml" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="c720ca56-5ae9-4239-9557-92ae0a8e94cf"
+                  Id="5c53844e-2d4b-4f38-b61a-cd78c2601246"
                   name="Game"
                   isLeaf="false"
                   isStatic="false"
@@ -78,80 +78,15 @@
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="81ed1c46-20a9-4a60-accd-2fdab0b5292d"
-                  name="Cart"
+                  Id="3b749acd-2014-4d98-81e7-45b0abf8dd8f"
+                  name="Track"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
                   isDerived="false"
                   isDerivedUnion="false"
                   aggregation="None"
-                  isComposite="false">
-                  <lowerValueInternal>
-                    <literalString
-                      Id="34d878b3-71a0-425c-9811-28780050baae"
-                      name="Lower"
-                      value="n" />
-                  </lowerValueInternal>
-                  <upperValueInternal>
-                    <literalString
-                      Id="d6544ae7-0d0a-49cd-9241-ec01a1c4ebb7"
-                      name="Upper"
-                      value="n" />
-                  </upperValueInternal>
-                </memberEnd>
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-          </association>
-          <association
-            Id="76e14ef0-178c-406a-8a59-06262e00bbcb"
-            isDerived="false"
-            sourceEndRoleName="Game"
-            targetEndRoleName="Ship"
-            isLeaf="false"
-            isAbstract="false">
-            <classMoniker
-              Id="c1700747-90c6-423c-b474-eb2490a28f95"
-              LastKnownName="Boat"
-              LastKnownLocation="Package_1306.uml" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="b608e14f-ab2f-4a3d-b798-13140b0a642a"
-                  name="Game"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false"
-                  isNavigableOwned="false" />
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="e2ff0f41-17d7-4c1a-b3b2-cab7897471bc"
-                  name="Ship"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false">
-                  <lowerValueInternal>
-                    <literalString
-                      Id="e6d23029-7030-4d27-9762-ff32f7580312"
-                      name="Lower"
-                      value="n" />
-                  </lowerValueInternal>
-                  <upperValueInternal>
-                    <literalString
-                      Id="23999f7e-51f6-43a8-9801-db43bbdb857c"
-                      name="Upper"
-                      value="n" />
-                  </upperValueInternal>
-                </memberEnd>
+                  isComposite="false" />
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
@@ -174,6 +109,14 @@
               LastKnownName="Tile"
               LastKnownLocation="Package_1306.uml" />
           </generalization>
+          <generalization
+            Id="82f18f47-d6b9-4755-b344-79970f86d48f"
+            isSubstitutable="false">
+            <classMoniker
+              Id="89d342cd-b8e4-4c50-875b-4d3fc1d7a665"
+              LastKnownName="Track"
+              LastKnownLocation="Package_1306.uml" />
+          </generalization>
         </generalsInternal>
       </class>
     </packageHasNamedElement>
@@ -194,6 +137,125 @@
               LastKnownLocation="Package_1306.uml" />
           </generalization>
         </generalsInternal>
+        <targetEnds>
+          <association
+            Id="e7b9950c-d341-4fec-a5f6-94342f429b3d"
+            isDerived="false"
+            sourceEndRoleName="Track"
+            targetEndRoleName="Cart"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="ab699449-141d-4390-b7fb-b3cac8171aef"
+              LastKnownName="Cart"
+              LastKnownLocation="Package_1306.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="dd38b28f-982e-4d1b-95d0-46d0dd15f70a"
+                  name="Track"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="f13dbf81-b9a4-4dec-ae09-592fd31d0d9a"
+                  name="Cart"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="7aa88f0e-6dac-48b1-86c5-7c245033cbbd"
+                      name="Lower"
+                      value="0" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="d8adc8ff-0ba0-413c-bd9c-a4183ca0a8de"
+                      name="Upper"
+                      value="1" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="3328c84f-d6df-47eb-baef-08881808dac4"
+            isDerived="false"
+            sourceEndRoleName="Track"
+            targetEndRoleName="Track"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="89d342cd-b8e4-4c50-875b-4d3fc1d7a665"
+              LastKnownName="Track"
+              LastKnownLocation="Package_1306.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="c8a1e03f-3c5c-443a-be6c-e514a5b7e9f9"
+                  name="Track"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="1ca1fc13-29a3-400c-a710-2523f082aa5b"
+                      name="Lower"
+                      value="0" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="12c6418d-23cf-4c35-995c-b3a921cf8ebd"
+                      name="Upper"
+                      value="2" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="26f1b51f-6c5d-4468-91bc-839114b815c7"
+                  name="Track"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="509de531-cdec-4f07-bae9-840acb4af7c0"
+                      name="Lower"
+                      value="0" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="6ed3bb7a-a45e-4ee2-b6d2-035e74e439d6"
+                      name="Upper"
+                      value="2" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -287,6 +349,79 @@
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="97097139-a0df-4c3c-8f46-722813a1efe3"
+        name="Coast"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="6d8db868-4b36-4609-8247-57554372ec35"
+            isSubstitutable="false">
+            <classMoniker
+              Id="89d342cd-b8e4-4c50-875b-4d3fc1d7a665"
+              LastKnownName="Track"
+              LastKnownLocation="Package_1306.uml" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association
+            Id="a8aba663-3425-4458-9d45-f5d71bc17f92"
+            isDerived="false"
+            sourceEndRoleName="Coast"
+            targetEndRoleName="Boat"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="c1700747-90c6-423c-b474-eb2490a28f95"
+              LastKnownName="Boat"
+              LastKnownLocation="Package_1306.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="d218f469-7dc7-4c37-9da9-72e19c71f5c1"
+                  name="Coast"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="c4d11a08-0772-471d-ae1e-e411248c2962"
+                  name="Boat"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="672bbc18-fc09-4d1f-a699-6cd6f2d6237a"
+                      name="Lower"
+                      value="0" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="41c83520-cb2c-4445-b110-d8a0c663d569"
+                      name="Upper"
+                      value="1" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </class>
     </packageHasNamedElement>
   </packagedElements>
 </package>
