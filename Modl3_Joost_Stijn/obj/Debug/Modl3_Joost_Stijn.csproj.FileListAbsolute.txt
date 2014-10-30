@@ -3,3 +3,5 @@ C:\Users\stijn\Documents\Modl3_Joost_Stijn\Modl3_Joost_Stijn\bin\Debug\Modl3_Joo
 C:\Users\stijn\Documents\Modl3_Joost_Stijn\Modl3_Joost_Stijn\bin\Debug\Modl3_Joost_Stijn.pdb
 C:\Users\stijn\Documents\Modl3_Joost_Stijn\Modl3_Joost_Stijn\obj\Debug\Modl3_Joost_Stijn.exe
 C:\Users\stijn\Documents\Modl3_Joost_Stijn\Modl3_Joost_Stijn\obj\Debug\Modl3_Joost_Stijn.pdb
+C:\Users\joost\Documents\Visual Studio 2013\Projects\Modl3_Joost_Stijn\Modl3_Joost_Stijn\obj\Debug\Modl3_Joost_Stijn.exe
+C:\Users\joost\Documents\Visual Studio 2013\Projects\Modl3_Joost_Stijn\Modl3_Joost_Stijn\obj\Debug\Modl3_Joost_Stijn.pdb

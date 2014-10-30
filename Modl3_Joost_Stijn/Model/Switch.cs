@@ -11,7 +11,6 @@ namespace Modl3_Joost_Stijn.Model
         public Boolean IsSplit { get; set; }
         public Track NextUp { get; set; }
         public Track NextDown { get; set; }
-        public Track Previous { get; set; }
         public Track PreviousUp { get; set; }
         public Track PreviousDown { get; set; }
 

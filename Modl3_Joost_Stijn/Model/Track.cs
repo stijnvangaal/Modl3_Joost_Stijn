@@ -9,6 +9,7 @@ namespace Modl3_Joost_Stijn.Model
     {
 
         public Track Next { get; set; }
+        public Track Previous { get; set; }
         public Cart Cart { get; set; }
         public Boolean IsLast { get; set; }
 
@@ -23,24 +24,24 @@ namespace Modl3_Joost_Stijn.Model
 
         public void moveCart()
         {
-            if (Next == null)
-        	{
-                if (IsLast)
-                {
-                    Cart = null;
-                }
-            }
-            else
+            if (Previous != null)
             {
-                if (Next.Cart == null)
+                if (Previous.Cart != null)
                 {
-                    Next.Cart = Cart;
-                    Cart = null;
-                }
-                else
-                {
-                    Console.WriteLine(" Game Over");
-                }
+                    if (Cart == null)
+                    {
+                        Cart = Previous.Cart;
+                        Previous.Cart = null;
+                    }
+                    else
+                    {
+                        Console.WriteLine("GameOver");
+                    }
+                }   
+            }
+            if (IsLast && Cart != null)
+            {
+                Cart = null;
             }
 
         }
