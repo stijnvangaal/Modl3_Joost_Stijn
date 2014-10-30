@@ -28,7 +28,7 @@ namespace Modl3_Joost_Stijn.Model
         {
             buildField();
 
-            Thread myThread = new Thread(new ThreadStart(GameLoop())); 
+            Thread myThread = new Thread(new ThreadStart(gameLoop)); 
 
 
         }
@@ -226,9 +226,33 @@ namespace Modl3_Joost_Stijn.Model
             return current.Next;
         }
 
-        public void GameLoop()
+        public void gameLoop()
         {
+            Water currentWaterUp;
+            Water currentWaterDown;
             while (running)
+            {
+                FirstUpperWater.moveBoat();
+                currentWaterUp = FirstUpperWater.Next;
+                FirstDownWater.moveBoat();
+                currentWaterDown = FirstDownWater.Next;
+                for (int i = 0; i < 30; i++)
+                {
+                    currentWaterUp.moveBoat();
+                    currentWaterDown.moveBoat();
+                }
+
+                Random random = new Random();
+                if ((random.Next(100) % 10) == 0)
+                {
+                    FirstUpperWater.newBoat();
+                }
+                if ((random.Next(100) % 11) == 0)
+                {
+                    FirstDownWater.newBoat();
+                }
+                
+            }
 
 
         }
