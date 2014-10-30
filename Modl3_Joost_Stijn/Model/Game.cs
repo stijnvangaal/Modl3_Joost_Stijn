@@ -239,6 +239,7 @@ namespace Modl3_Joost_Stijn.Model
         {
             //make water thingies do their shizzle
             moveCarts();
+            MyApp.myView.drawField();
             return false;
         }
 
@@ -259,7 +260,6 @@ namespace Modl3_Joost_Stijn.Model
                 currentBottom.moveCart();
                 currentBottom = currentBottom.Previous;
                 //check erbij wanneer coast bereikt is-------------------------
-                MyApp.myView.drawField();
             }
 
             Switch5.moveCart();
