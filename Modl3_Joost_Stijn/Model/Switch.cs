@@ -42,27 +42,27 @@ namespace Modl3_Joost_Stijn.Model
         public void change()
         {
             Up = !Up;
-            if(IsSplit)
-            {
-                if (Up)
-	            {
-                    Next = NextUp;
-	            }
-                else
-                {
-                    Next = NextDown;
-                }    
-            }
-            else{
-                if (Up)
-                {
-                    Previous = PreviousUp;
-                }
-                else
-                {
-                    Previous = PreviousDown;
-                }    
-            }
+            //if(IsSplit)
+            //{
+            //    if (Up)
+	        //    {
+            //        Next = NextUp;
+	        //    }
+            //    else
+            //    {
+             //       Next = NextDown;
+            //    }    
+           // }
+            //else{
+            //    if (Up)
+            //    {
+           //         Previous = PreviousUp;
+           //     }
+           //     else
+           //     {
+          //          Previous = PreviousDown;
+          //      }    
+          //  }
         }
 
         

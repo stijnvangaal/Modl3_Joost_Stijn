@@ -24,7 +24,8 @@ namespace Modl3_Joost_Stijn.View
         public Water FirstDownWater { get; set; }
 
         public View()
-        { }
+        { 
+        }
 
         public void drawField()
         {
@@ -32,7 +33,6 @@ namespace Modl3_Joost_Stijn.View
             drawWater(FirstUpperWater);
             drawTracks();
             drawWater(FirstDownWater);
-            Console.ReadLine();
         }
 
         private void drawWater(Water firstWater)

@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Windows;
+using System.Windows.Forms;
 
 namespace Modl3_Joost_Stijn.Model
 {
@@ -14,15 +16,22 @@ namespace Modl3_Joost_Stijn.Model
     //    ~~~~~~~~~~~~~~~~~~~~~~~~~~
     class Game
     {
-
+        public Controller.Application MyApp { get; set; }
         public Water FirstUpperWater { get; set; }
         public Barrack BarrackA { get; set; }
         public Barrack BarrackB { get; set; }
         public Barrack BarrackC { get; set; }
         public Water FirstDownWater { get; set; }
 
-        public Game()
+        public Switch Switch1 { get; set; }
+        public Switch Switch2 { get; set; }
+        public Switch Switch3 { get; set; }
+        public Switch Switch4 { get; set; }
+        public Switch Switch5 { get; set; }
+
+        public Game(Controller.Application app)
         {
+            MyApp = app;
             buildField();
         }
 
@@ -32,13 +41,7 @@ namespace Modl3_Joost_Stijn.Model
             Water previous = FirstUpperWater;
             Water current           = null;
             Water upperCoastWater   = null;
-            Water bottomCoastWater = null;
-
-            Switch switch1          = null;
-            Switch switch2          = null;
-            Switch switch3          = null;
-            Switch switch4          = null;
-            Switch switch5          = null;
+            Water bottomCoastWater  = null;
 
             //topline of water
             for (int i = 0; i < 30; i++)
@@ -78,24 +81,24 @@ namespace Modl3_Joost_Stijn.Model
             currentTrack = currentTrack.Next;
 
             //switch 1 UP
-            switch1 = new Switch(false);
-            currentTrack.Next = switch1;
-            switch1.PreviousUp = currentTrack;
-            switch1.Up = false;
-            switch1.Previous = switch1.PreviousUp;
-            currentTrack = switch1;
+            Switch1 = new Switch(false);
+            currentTrack.Next = Switch1;
+            Switch1.PreviousUp = currentTrack;
+            Switch1.Up = false;
+            Switch1.Previous = Switch1.PreviousUp;
+            currentTrack = Switch1;
 
             currentTrack.Next = new Track();
             currentTrack = currentTrack.Next;
 
             //switch 2 UP
-            switch2 = new Switch(true);
-            currentTrack.Next = switch2;
-            switch2.Previous = currentTrack;
-            switch2.Up = true;
-            currentTrack = switch2;
+            Switch2 = new Switch(true);
+            currentTrack.Next = Switch2;
+            Switch2.Previous = currentTrack;
+            Switch2.Up = true;
+            currentTrack = Switch2;
             currentTrack.Next = new Track();
-            switch2.NextUp = currentTrack.Next;
+            Switch2.NextUp = currentTrack.Next;
             currentTrack = currentTrack.Next;
 
             for (int i = 0; i < 4; i++)
@@ -106,12 +109,12 @@ namespace Modl3_Joost_Stijn.Model
             }
 
             //switch 5 UP
-            switch5 = new Switch(false);
-            currentTrack.Next = switch5;
-            switch5.PreviousUp = currentTrack;
-            switch5.Up = true;
-            switch5.Previous = switch5.PreviousUp;
-            currentTrack = switch5;
+            Switch5 = new Switch(false);
+            currentTrack.Next = Switch5;
+            Switch5.PreviousUp = currentTrack;
+            Switch5.Up = true;
+            Switch5.Previous = Switch5.PreviousUp;
+            currentTrack = Switch5;
 
             for (int i = 0; i < 12; i++)
             {
@@ -138,42 +141,42 @@ namespace Modl3_Joost_Stijn.Model
             currentTrack = currentTrack.Next;
 
             //switch 1 DOWN
-            currentTrack.Next = switch1;
-            switch1.PreviousDown = currentTrack;
+            currentTrack.Next = Switch1;
+            Switch1.PreviousDown = currentTrack;
 
             //switch 2 DOWN
-            switch2.NextDown = new Track();
-            currentTrack = switch2.NextDown;
+            Switch2.NextDown = new Track();
+            currentTrack = Switch2.NextDown;
             currentTrack.Next = new Track();
             currentTrack = currentTrack.Next;
 
             //switch 3 UP
-            switch3 = new Switch(false);
-            currentTrack.Next = switch3;
-            switch3.PreviousUp = currentTrack;
-            switch3.Up = true;
-            switch3.Previous = switch3.PreviousUp;
-            currentTrack = switch3;
+            Switch3 = new Switch(false);
+            currentTrack.Next = Switch3;
+            Switch3.PreviousUp = currentTrack;
+            Switch3.Up = true;
+            Switch3.Previous = Switch3.PreviousUp;
+            currentTrack = Switch3;
 
             currentTrack.Next = new Track();
             currentTrack = currentTrack.Next;
 
             //switch 4 UP
-            switch4 = new Switch(true);
-            currentTrack.Next = switch4;
-            switch4.Previous = currentTrack;
-            switch4.Up = false;
-            currentTrack = switch4;
+            Switch4 = new Switch(true);
+            currentTrack.Next = Switch4;
+            Switch4.Previous = currentTrack;
+            Switch4.Up = false;
+            currentTrack = Switch4;
             currentTrack.Next = new Track();
-            switch4.NextUp = currentTrack.Next;
+            Switch4.NextUp = currentTrack.Next;
             currentTrack = currentTrack.Next;
 
             currentTrack.Next = new Track();
             currentTrack = currentTrack.Next;
 
             //switch 5 DOWN
-            currentTrack.Next = switch5;
-            switch5.PreviousDown = currentTrack;
+            currentTrack.Next = Switch5;
+            Switch5.PreviousDown = currentTrack;
 
             //starting from Barrack C
             BarrackC = new Barrack();
@@ -187,12 +190,12 @@ namespace Modl3_Joost_Stijn.Model
             }
 
             //switch 3 DOWN
-            currentTrack.Next = switch3;
-            switch3.PreviousDown = currentTrack;
+            currentTrack.Next = Switch3;
+            Switch3.PreviousDown = currentTrack;
 
             //switch 4 DOWN
-            switch4.NextDown = new Track();
-            currentTrack = switch4.NextDown;
+            Switch4.NextDown = new Track();
+            currentTrack = Switch4.NextDown;
 
             for (int i = 0; i < 12; i++)
             {
@@ -216,7 +219,25 @@ namespace Modl3_Joost_Stijn.Model
             current.Next.Previous = current;
             return current.Next;
         }
+        public void KeyListener()
+        {
+            ConsoleKeyInfo cki;
+            // Prevent example from ending if CTL+C is pressed.
+            Console.TreatControlCAsInput = true;
 
+            Console.WriteLine("Press any switch number. Or esc to exit");
+            do
+            {
+                cki = Console.ReadKey();
+                if (cki.Key == ConsoleKey.D1) { Switch1.change(); }
+                if (cki.Key == ConsoleKey.D2) { Switch2.change(); }
+                if (cki.Key == ConsoleKey.D3) { Switch3.change(); }
+                if (cki.Key == ConsoleKey.D4) { Switch4.change(); }
+                if (cki.Key == ConsoleKey.D5) { Switch5.change(); }
+                MyApp.myView.drawField();
+                Console.WriteLine("Press any switch number. Or esc to exit");
+            } while (cki.Key != ConsoleKey.Escape);
+        }
 //        private void CreatePlayerFirstFields(Player p, Field join)
 //        {
 //            Field previous = null;

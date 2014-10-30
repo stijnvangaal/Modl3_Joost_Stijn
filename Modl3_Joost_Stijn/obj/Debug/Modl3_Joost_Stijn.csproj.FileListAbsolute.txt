@@ -1,4 +1,3 @@
-C:\Users\stijn\Documents\Modl3_Joost_Stijn\Modl3_Joost_Stijn\obj\Debug\Modl3_Joost_Stijn.csprojResolveAssemblyReference.cache
 C:\Users\stijn\Documents\Modl3_Joost_Stijn\Modl3_Joost_Stijn\bin\Debug\Modl3_Joost_Stijn.exe
 C:\Users\stijn\Documents\Modl3_Joost_Stijn\Modl3_Joost_Stijn\bin\Debug\Modl3_Joost_Stijn.pdb
 C:\Users\stijn\Documents\Modl3_Joost_Stijn\Modl3_Joost_Stijn\obj\Debug\Modl3_Joost_Stijn.exe

@@ -9,16 +9,17 @@ namespace Modl3_Joost_Stijn.Controller
 {
     class Application
     {
-        private View.View myView { get; set; }
-        private Game myGame { get; set; }
+        public View.View myView { get; set; }
+        public Game myGame { get; set; }
 
         public Application()
         {
             myView = new View.View();
-            myGame = new Game();
+            myGame = new Game(this);
 
             myView.setField(myGame.FirstUpperWater, myGame.BarrackA, myGame.BarrackB, myGame.BarrackC, myGame.FirstDownWater);
             myView.drawField();
+            myGame.KeyListener();
         }
     }
 }
