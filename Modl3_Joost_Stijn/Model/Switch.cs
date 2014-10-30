@@ -46,21 +46,29 @@ namespace Modl3_Joost_Stijn.Model
             {
                 if (Up)
 	            {
+                    Next.Previous = null;
                     Next = NextUp;
+                    Next.Previous = this;
 	            }
                 else
                 {
+                    Next.Previous = null;
                     Next = NextDown;
+                    Next.Previous = this;
                 }    
             }
             else{
                 if (Up)
                 {
+                    Previous.Next = null;
                     Previous = PreviousUp;
+                    Previous.Next = this;
                 }
                 else
                 {
+                    Previous.Next = null;
                     Previous = PreviousDown;
+                    Previous.Next = this;
                 }    
             }
         }
