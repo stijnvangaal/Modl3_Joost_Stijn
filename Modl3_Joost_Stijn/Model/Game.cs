@@ -301,6 +301,32 @@ namespace Modl3_Joost_Stijn.Model
             return false;
         }
 
+        public void MoveBoats()
+        {
+            Water currentWaterUp;
+            Water currentWaterDown;
+            FirstUpperWater.moveBoat();
+            currentWaterUp = FirstUpperWater.Next;
+            FirstDownWater.moveBoat();
+            currentWaterDown = FirstDownWater.Next;
+            for (int i = 0; i < 30; i++)
+            {
+                currentWaterUp.moveBoat();
+                currentWaterDown.moveBoat();
+            }
+
+            Random random = new Random();
+            if ((random.Next(100) % 10) == 0)
+            {
+                FirstUpperWater.newBoat();
+            }
+            if ((random.Next(100) % 11) == 0)
+            {
+                FirstDownWater.newBoat();
+            }
+
+        }
+
         public void KeyListener()
         {
             ConsoleKeyInfo cki;
