@@ -232,6 +232,7 @@ namespace Modl3_Joost_Stijn.Model
             Water currentWaterDown;
             while (running)
             {
+                
                 FirstUpperWater.moveBoat();
                 currentWaterUp = FirstUpperWater.Next;
                 FirstDownWater.moveBoat();
