@@ -10,6 +10,8 @@ namespace Modl3_Joost_Stijn.Model
         public void newCart()
         {
             Cart = new Cart();
+            Next.Cart = Cart;
+            Cart = null;
         }
     }
 }
