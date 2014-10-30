@@ -213,6 +213,7 @@ namespace Modl3_Joost_Stijn.Model
         private Track addTrack(Track current)
         {
             current.Next = new Track();
+            current.Next.Previous = current;
             return current.Next;
         }
 
