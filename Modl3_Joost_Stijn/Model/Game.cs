@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 
 namespace Modl3_Joost_Stijn.Model
 {
@@ -20,15 +21,22 @@ namespace Modl3_Joost_Stijn.Model
         public Barrack BarrackB { get; set; }
         public Barrack BarrackC { get; set; }
         public Water FirstDownWater { get; set; }
+        public Boolean running = true;
+        
 
         public Game()
         {
             buildField();
+
+            Thread myThread = new Thread(new ThreadStart(GameLoop())); 
+
+
         }
 
         public void buildField()
         {
             FirstUpperWater = new Water();
+            FirstUpperWater.IsFirst = true;
             Water previous = FirstUpperWater;
             Water current           = null;
             Water upperCoastWater   = null;
@@ -53,6 +61,7 @@ namespace Modl3_Joost_Stijn.Model
             }
 
             FirstDownWater = new Water();
+            FirstDownWater.IsFirst = true;
             previous = FirstDownWater;
             current = null;
 
@@ -215,6 +224,13 @@ namespace Modl3_Joost_Stijn.Model
             current.Next = new Track();
             current.Next.Previous = current;
             return current.Next;
+        }
+
+        public void GameLoop()
+        {
+            while (running)
+
+
         }
 
 //        private void CreatePlayerFirstFields(Player p, Field join)
