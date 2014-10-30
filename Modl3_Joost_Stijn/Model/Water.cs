@@ -15,6 +15,13 @@ namespace Modl3_Joost_Stijn.Model
         public Boolean IsLast { get; set; }
         public Boolean IsFirst { get; set; }
 
+        public Water()
+        {
+            IsCoast = false;
+            IsLast = false;
+            IsFirst = false;
+        }
+
         public void newBoat()
         {
             if (IsFirst)

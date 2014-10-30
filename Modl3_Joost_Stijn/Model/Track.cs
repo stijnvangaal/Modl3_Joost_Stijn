@@ -24,7 +24,11 @@ namespace Modl3_Joost_Stijn.Model
 
         public void moveCart()
         {
-            if (Previous != null)
+            if (IsLast && Cart != null)
+            {
+                Cart = null;
+            }
+            else if (Previous != null)
             {
                 if (Previous.Cart != null)
                 {
@@ -39,11 +43,6 @@ namespace Modl3_Joost_Stijn.Model
                     }
                 }   
             }
-            if (IsLast && Cart != null)
-            {
-                Cart = null;
-            }
-
         }
 
     }

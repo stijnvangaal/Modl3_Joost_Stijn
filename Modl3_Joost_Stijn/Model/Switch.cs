@@ -44,7 +44,64 @@ namespace Modl3_Joost_Stijn.Model
             Up = !Up;
         }
 
-        
+        public void moveCart()
+        {
+            if (IsSplit)
+            {
+                if (IsLast && Cart != null)
+                {
+                    Cart = null;
+                }
+                else if (Previous != null)
+                {
+                    if (Previous.Cart != null)
+                    {
+                        if (Cart == null)
+                        {
+                            Cart = Previous.Cart;
+                            Previous.Cart = null;
+                        }
+                        else
+                        {
+                            Console.WriteLine("GameOver");
+                        }
+                    }
+                }
+            }
+            else
+            {
+                if (Up)
+                {
+                    if (PreviousUp.Cart != null)
+                    {
+                        if (Cart == null)
+                        {
+                            Cart = PreviousUp.Cart;
+                            PreviousUp.Cart = null;
+                        }
+                        else
+                        {
+                            Console.WriteLine("GameOver");
+                        }
+                    }
+                }
+                else
+                {
+                    if (PreviousDown.Cart != null)
+                    {
+                        if (Cart == null)
+                        {
+                            Cart = PreviousDown.Cart;
+                            PreviousDown.Cart = null;
+                        }
+                        else
+                        {
+                            Console.WriteLine("GameOver");
+                        }
+                    }
+                }
+            }
+        }
 
     }
 }

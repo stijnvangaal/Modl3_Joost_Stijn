@@ -179,6 +179,21 @@ namespace Modl3_Joost_Stijn.View
                 }
                 else if ("" + track.GetType() == domain + "Coast") { Console.Write("K"); }
             }
+            else
+            {
+                if ("" + track.GetType() == domain + "Track") {
+                    if (track.Cart.Loaded) { Console.Write((char)127); }
+                    else { Console.Write((char)34); }
+
+                }
+                else if ("" + track.GetType() == domain + "Switch")
+                {
+                    Switch tempSwitch = (Switch)track;
+                    if (tempSwitch.Up) { Console.Write("%"); }
+                    else { Console.Write((char)247); }
+                }
+                else if ("" + track.GetType() == domain + "Coast") { Console.Write((char)94); }
+            }
         }
 
         public void setField(Water FUW, Barrack BA, Barrack BB, Barrack BC, Water FDW)
