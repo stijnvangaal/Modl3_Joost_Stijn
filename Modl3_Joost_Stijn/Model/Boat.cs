@@ -7,13 +7,15 @@ namespace Modl3_Joost_Stijn.Model
 {
     class Boat
     {
+        private Game game;
         public int Capacity { get; set; }
         public int Cargo { get; set; }
 
 
-        public Boat()
+        public Boat(Game game)
         {
-            Capacity = 3;
+            this.game = game;
+            Capacity = 1;
             Cargo = 0;
         }
 
@@ -22,6 +24,8 @@ namespace Modl3_Joost_Stijn.Model
             if (Cargo < Capacity)
             {
                 Cargo = Cargo + 1;
+                game.points++;
+                if (Cargo == Capacity) { game.points += 10; }
             }
         }
     }

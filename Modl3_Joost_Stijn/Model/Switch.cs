@@ -41,10 +41,10 @@ namespace Modl3_Joost_Stijn.Model
 
         public void change()
         {
-            Up = !Up;
+            if (this.Cart == null) { Up = !Up; }
         }
 
-        public void moveCart()
+        public Boolean moveCart()
         {
             if (IsSplit)
             {
@@ -67,6 +67,7 @@ namespace Modl3_Joost_Stijn.Model
                         }
                     }
                 }
+                return false;
             }
             else
             {
@@ -82,6 +83,7 @@ namespace Modl3_Joost_Stijn.Model
                         else
                         {
                             Console.WriteLine("GameOver");
+                            return true;
                         }
                     }
                 }
@@ -97,9 +99,11 @@ namespace Modl3_Joost_Stijn.Model
                         else
                         {
                             Console.WriteLine("GameOver");
+                            return true;
                         }
                     }
                 }
+                return false;
             }
         }
 

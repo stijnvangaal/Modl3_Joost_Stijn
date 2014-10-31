@@ -27,12 +27,49 @@ namespace Modl3_Joost_Stijn.View
         { 
         }
 
-        public void drawField()
+        public void drawFirst()
         {
-            Console.Clear();
+            Console.WriteLine("Gold Fever");
+            Console.WriteLine();
             drawWater(FirstUpperWater);
             drawTracks();
             drawWater(FirstDownWater);
+
+            Console.WriteLine();
+            Console.WriteLine("press spaceBar to begin. press esc to exit.");
+        }
+
+        public void endMessage(int Points, int steps)
+        {
+            Console.Clear();
+            Console.WriteLine("Gold Fever");
+            Console.WriteLine();
+            drawWater(FirstUpperWater);
+            drawTracks();
+            drawWater(FirstDownWater);
+
+            Console.WriteLine();
+            Console.WriteLine("GAME OVER");
+            Console.WriteLine();
+            Console.WriteLine("you scored {0} points", Points);
+            Console.WriteLine("and survived for {0} steps", steps);
+            Console.WriteLine("press esc to leave");
+        }
+
+        public void drawField(int points)
+        {
+            Console.Clear();
+            Console.WriteLine("Gold Fever");
+            Console.WriteLine();
+            Console.WriteLine("Points: {0}", points);
+            Console.WriteLine();
+
+            drawWater(FirstUpperWater);
+            drawTracks();
+            drawWater(FirstDownWater);
+
+            Console.WriteLine("Press any switch number. Or esc to exit");
+            Console.WriteLine("Switches are numbered from left to right: 1-5");
         }
 
         private void drawWater(Water firstWater)
@@ -53,7 +90,6 @@ namespace Modl3_Joost_Stijn.View
                     else if (currentWater.MyBoat != null) { Console.Write(currentWater.MyBoat.Cargo); }
                     else { Console.Write("~"); }
                 }
-                else if (currentWater.Next == null) { Console.Write("~");}
                 currentWater = currentWater.Next;
             }
             Console.WriteLine();

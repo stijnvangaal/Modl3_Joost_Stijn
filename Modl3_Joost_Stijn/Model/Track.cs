@@ -7,7 +7,6 @@ namespace Modl3_Joost_Stijn.Model
 {
     class Track
     {
-
         public Track Next { get; set; }
         public Track Previous { get; set; }
         public Cart Cart { get; set; }
@@ -22,7 +21,8 @@ namespace Modl3_Joost_Stijn.Model
             Next = newNext;
         }
 
-        public void moveCart()
+        //if collision is made. return true
+        public Boolean moveCart()
         {
             if (IsLast && Cart != null)
             {
@@ -40,9 +40,11 @@ namespace Modl3_Joost_Stijn.Model
                     else
                     {
                         Console.WriteLine("GameOver");
+                        return true;
                     }
                 }   
             }
+            return false;
         }
 
     }

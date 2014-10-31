@@ -7,7 +7,7 @@ namespace Modl3_Joost_Stijn.Model
 {
     class Water
     {
-
+        private Game game;
         public Water Next { get; set; }
         public Water Previous { get; set; }
         public Boat MyBoat { get; set; }
@@ -15,8 +15,9 @@ namespace Modl3_Joost_Stijn.Model
         public Boolean IsLast { get; set; }
         public Boolean IsFirst { get; set; }
 
-        public Water()
+        public Water(Game game)
         {
+            this.game = game;
             IsCoast = false;
             IsLast = false;
             IsFirst = false;
@@ -26,7 +27,7 @@ namespace Modl3_Joost_Stijn.Model
         {
             if (IsFirst)
             {
-                MyBoat = new Boat();
+                MyBoat = new Boat(game);
             }
         }
         public void moveBoat()
@@ -41,23 +42,23 @@ namespace Modl3_Joost_Stijn.Model
             }
             else if (IsCoast)
             {
-                if (MyBoat.Cargo == MyBoat.Capacity)
-                 {
-                       if (Next.MyBoat == null)
-                     {
-                        Next.MyBoat = MyBoat;
-                        MyBoat = null;
+                if (MyBoat != null)
+                {
+                    if (MyBoat.Cargo == MyBoat.Capacity)
+                    {
+                        if (Next.MyBoat == null)
+                        {
+                            Next.MyBoat = MyBoat;
+                            MyBoat = null;
+                        }
                     }
-                    
                 }
             } 
             else
             {
-                if (Next.MyBoat == null)
-                {
-                    Next.MyBoat = MyBoat;
-                    MyBoat = null;
-                }
+                if (Next.MyBoat == null && Next.Next == null) { Next.MyBoat = MyBoat; MyBoat = null; }
+                else if (Next.MyBoat == null && Next.Next.MyBoat == null && Next.Next.Next == null) { Next.MyBoat = MyBoat; MyBoat = null; }
+                else if (Next.MyBoat == null && Next.Next.MyBoat == null && Next.Next.Next.MyBoat == null) { Next.MyBoat = MyBoat; MyBoat = null; }
               
             }
         }

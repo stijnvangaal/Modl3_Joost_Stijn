@@ -18,8 +18,19 @@ namespace Modl3_Joost_Stijn.Controller
             myGame = new Game(this);
 
             myView.setField(myGame.FirstUpperWater, myGame.BarrackA, myGame.BarrackB, myGame.BarrackC, myGame.FirstDownWater);
-            myView.drawField();
+            myView.drawFirst();
             myGame.KeyListener();
+        }
+
+        internal void endGame(int Points, int steps)
+        {
+            myView.endMessage(Points, steps);
+        }
+
+        internal void Start()
+        {
+            myView.drawField(0);
+            myGame.started = true;
         }
     }
 }

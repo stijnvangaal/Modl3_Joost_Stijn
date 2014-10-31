@@ -19,12 +19,19 @@ namespace Modl3_Joost_Stijn.Model
     {
         public Controller.Application MyApp { get; set; }
         public Water FirstUpperWater { get; set; }
+        public Water LastUpperWater { get; set; }
         public Barrack BarrackA { get; set; }
         public Barrack BarrackB { get; set; }
         public Barrack BarrackC { get; set; }
         public Water FirstDownWater { get; set; }
+        public Water LastDownWater { get; set; }
         public Track EndingTop { get; set; }
         public Track EndingBottom { get; set; }
+
+        public Boolean started = false;
+        private Boolean ended = false;
+        public int points = 0;
+        private int steps = 0;
         
         public Switch Switch1 { get; set; }
         public Switch Switch2 { get; set; }
@@ -39,7 +46,6 @@ namespace Modl3_Joost_Stijn.Model
         {
             MyApp = app;
             buildField();
-            //EndingTop.Previous.Previous.Previous.Previous.Previous.Previous.Previous.Previous.Previous.Previous.Previous.Previous.Previous.Previous.Cart = new Cart();
             BarrackB.newCart();
             BarrackA.newCart();
             BarrackC.newCart();
@@ -50,7 +56,7 @@ namespace Modl3_Joost_Stijn.Model
 
         public void buildField()
         {
-            FirstUpperWater = new Water();
+            FirstUpperWater = new Water(this);
             FirstUpperWater.IsFirst = true;
             Water previous = FirstUpperWater;
             Water current           = null;
@@ -60,16 +66,18 @@ namespace Modl3_Joost_Stijn.Model
             //topline of water
             for (int i = 0; i < 30; i++)
             {
-                current = new Water();
+                current = new Water(this);
                 current.Previous = previous;
                 previous.Next = current;
 
-                if (i == 16) { upperCoastWater = current; current.IsCoast = true; current.MyBoat = new Boat(); }
+                if (i == 16) { upperCoastWater = current; current.IsCoast = true; }
 
                 previous = current;
             }
+            LastUpperWater = current;
+            LastUpperWater.IsLast = true;
 
-            FirstDownWater = new Water();
+            FirstDownWater = new Water(this);
             FirstDownWater.IsFirst = true;
             previous = FirstDownWater;
             current = null;
@@ -77,14 +85,16 @@ namespace Modl3_Joost_Stijn.Model
             //Bottomline of water
             for (int i = 0; i < 30; i++)
             {
-                current = new Water();
+                current = new Water(this);
                 current.Previous = previous;
                 previous.Next = current;
 
-                if (i == 14) { bottomCoastWater = current; current.IsCoast = true; current.MyBoat = new Boat(); }
+                if (i == 14) { bottomCoastWater = current; current.IsCoast = true;  }
 
                 previous = current;
             }
+            LastDownWater = current;
+            LastDownWater.IsLast = true;
 
             //starting from Barrack A
             BarrackA = new Barrack();
@@ -214,7 +224,7 @@ namespace Modl3_Joost_Stijn.Model
                 {
                     Coast coast = new Coast();
                     currentTrack.Next = coast;
-                    coast.MyWater = upperCoastWater;
+                    coast.MyWater = bottomCoastWater;
                     coast.Previous = currentTrack;
                     currentTrack = coast;
                 }
@@ -235,35 +245,64 @@ namespace Modl3_Joost_Stijn.Model
         }
 
         //returns true if game is over
-        public Boolean doStep()
+        public void doStep()
         {
-            //make water thingies do their shizzle
-            moveCarts();
-            MyApp.myView.drawField();
-            return false;
+            MoveBoats();
+            Boolean finished = moveCarts();
+            if (!finished) { MyApp.myView.drawField(points); }
+            else {
+                ended = true;
+                MyApp.endGame(points, steps); 
+                myThread.Abort();
+                
+            }
+            steps++;
         }
 
         //return true if game is over
         public Boolean moveCarts()
         {
+            Boolean finished = false;
             Track currentTop = EndingTop;
             for (int i = 0; i < 12; i++)
             {
                 currentTop.moveCart();
-                currentTop = currentTop.Previous;
-                //check erbij wanneer coast bereikt is-------------------------
+                if ("" + currentTop.GetType() == "Modl3_Joost_Stijn.Model.Coast")
+                {
+                    if (currentTop.Cart != null)
+                    {
+                         Coast temp = (Coast)currentTop;
+                         if (temp.MyWater.MyBoat != null) 
+                        { 
+                             temp.MyWater.MyBoat.load();
+                             currentTop.Cart.unLoad();
+                         }
+                    }
+                }
+                currentTop = currentTop.Previous;  
             }
 
             Track currentBottom = EndingBottom;
             for (int i = 0; i < 12; i++)
             {
                 currentBottom.moveCart();
+                if ("" + currentBottom.GetType() == "Modl3_Joost_Stijn.Model.Coast")
+                {
+                    if (currentBottom.Cart != null)
+                    {
+                        Coast temp = (Coast)currentBottom;
+                        if (temp.MyWater.MyBoat != null)
+                        {
+                            temp.MyWater.MyBoat.load();
+                            currentBottom.Cart.unLoad();
+                        }
+                    }
+                }
                 currentBottom = currentBottom.Previous;
-                //check erbij wanneer coast bereikt is-------------------------
             }
 
             Switch5.moveCart();
-            Switch5.PreviousDown.moveCart();
+            if (Switch5.PreviousDown.moveCart()) { finished = true; }
             if (Switch4.Up) { Switch5.PreviousDown.Previous.moveCart(); }
             else { currentBottom.moveCart(); }
 
@@ -274,18 +313,18 @@ namespace Modl3_Joost_Stijn.Model
             currentBottom = Switch3.PreviousDown;
             for (int i = 0; i < 5; i++)
             {
-                currentBottom.moveCart();
+                if(currentBottom.moveCart()) { finished = true; }
                 currentBottom = currentBottom.Previous;
             }
 
             currentTop = Switch5.PreviousUp;
             for (int i = 0; i < 4; i++)
             {
-                currentTop.moveCart();
+                if(currentTop.moveCart()) { finished = true; }
                 currentTop = currentTop.Previous;
             }
 
-            Switch3.PreviousUp.moveCart();
+            if(Switch3.PreviousUp.moveCart()) { finished = true; }
 
             if (Switch2.Up) { currentTop.moveCart(); }
             else { Switch3.PreviousUp.Previous.moveCart(); }
@@ -293,36 +332,47 @@ namespace Modl3_Joost_Stijn.Model
             currentTop.Previous.Previous.moveCart();
 
             Switch1.moveCart();
-            Switch1.PreviousUp.moveCart();
+            if(Switch1.PreviousUp.moveCart()) { finished = true; }
             Switch1.PreviousUp.Previous.moveCart();
-            Switch1.PreviousDown.moveCart();
+            if(Switch1.PreviousDown.moveCart()) { finished = true; }
             Switch1.PreviousDown.Previous.moveCart();
 
-            return false;
+            return finished;
         }
 
         public void MoveBoats()
         {
             Water currentWaterUp;
             Water currentWaterDown;
-            FirstUpperWater.moveBoat();
-            currentWaterUp = FirstUpperWater.Next;
-            FirstDownWater.moveBoat();
-            currentWaterDown = FirstDownWater.Next;
-            for (int i = 0; i < 30; i++)
+            currentWaterUp = LastUpperWater;
+            currentWaterDown = LastDownWater;
+            
+            while (currentWaterUp != null)
             {
                 currentWaterUp.moveBoat();
+                currentWaterUp = currentWaterUp.Previous;
+            }
+
+            while (currentWaterDown != null)
+            {
                 currentWaterDown.moveBoat();
+                currentWaterDown = currentWaterDown.Previous;
             }
 
             Random random = new Random();
-            if ((random.Next(100) % 10) == 0)
+            if ((random.Next(100) % 20) == 0)
             {
-                FirstUpperWater.newBoat();
+                if (FirstUpperWater.MyBoat == null && FirstUpperWater.Next.MyBoat == null && FirstUpperWater.Next.Next.MyBoat == null)
+                {
+                    FirstUpperWater.newBoat();
+                }
             }
-            if ((random.Next(100) % 11) == 0)
+            if ((random.Next(100) % 20) == 0)
             {
-                FirstDownWater.newBoat();
+                if (FirstDownWater.MyBoat == null && FirstDownWater.Next.MyBoat == null && FirstDownWater.Next.Next.MyBoat == null)
+                {
+                    FirstDownWater.newBoat();
+                }
             }
 
         }
@@ -330,21 +380,25 @@ namespace Modl3_Joost_Stijn.Model
         public void KeyListener()
         {
             ConsoleKeyInfo cki;
-            // Prevent example from ending if CTL+C is pressed.
             Console.TreatControlCAsInput = true;
 
-            Console.WriteLine("Press any switch number. Or esc to exit");
             do
             {
                 cki = Console.ReadKey();
-                if (cki.Key == ConsoleKey.D1) { Switch1.change(); }
-                if (cki.Key == ConsoleKey.D2) { Switch2.change(); }
-                if (cki.Key == ConsoleKey.D3) { Switch3.change(); }
-                if (cki.Key == ConsoleKey.D4) { Switch4.change(); }
-                if (cki.Key == ConsoleKey.D5) { Switch5.change(); }
-                if (cki.Key == ConsoleKey.Escape) { myThread.Abort(); ; Environment.Exit(0); }
-                MyApp.myView.drawField();
-                Console.WriteLine("Press any switch number. Or esc to exit");
+                if (!ended && started)
+                {
+                    if (cki.Key == ConsoleKey.D1) { Switch1.change(); }
+                    if (cki.Key == ConsoleKey.D2) { Switch2.change(); }
+                    if (cki.Key == ConsoleKey.D3) { Switch3.change(); }
+                    if (cki.Key == ConsoleKey.D4) { Switch4.change(); }
+                    if (cki.Key == ConsoleKey.D5) { Switch5.change(); }
+                    if (cki.Key == ConsoleKey.Escape) { myThread.Abort(); Environment.Exit(0); }
+                    MyApp.myView.drawField(points);
+                }
+                else { 
+                    if (cki.Key == ConsoleKey.Escape) { Environment.Exit(0); }
+                    if (cki.Key == ConsoleKey.Spacebar) { MyApp.Start(); } 
+                }
             } while (true);
             
         }
@@ -353,39 +407,12 @@ namespace Modl3_Joost_Stijn.Model
         {
             while (running) 
             {
-                Thread.Sleep(1000);
-                doStep();
+                if (started)
+                {
+                    Thread.Sleep(1000);
+                    doStep();
+                }
             }
-
-
         }
-
-//        private void CreatePlayerFirstFields(Player p, Field join)
-//        {
-//            Field previous = null;
-//            Field newOne = null;
-//            for (int i = 0; i < 4; i++) // 4 velden aanmaken
-//           {
-//                if (i == 3) // vierde (index 3) is Rozet
-//                {
-//                    newOne = new RozetField();
-//                }
-//                else
-//                {
-//                    newOne = new Field();
-//                }
-//
-//                if (i == 0) // bij begin koppelen aan start
-//                {
-//                    p.StartField.NextField = newOne;
-//                }
-//                else // anders koppelen aan vorige
-//                {
-//                    previous.NextField = newOne;
-//                }
-//                previous = newOne;
-//            }
-//            newOne.NextField = join; // laatste koppelen aan join
-//       }
     }
 }
