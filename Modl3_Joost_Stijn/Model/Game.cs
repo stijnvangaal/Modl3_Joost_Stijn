@@ -46,9 +46,6 @@ namespace Modl3_Joost_Stijn.Model
         {
             MyApp = app;
             buildField();
-            BarrackB.newCart();
-            BarrackA.newCart();
-            BarrackC.newCart();
             myThread = new Thread(new ThreadStart(this.GameLoop));
             myThread.Start();
 
@@ -249,6 +246,15 @@ namespace Modl3_Joost_Stijn.Model
         {
             MoveBoats();
             Boolean finished = moveCarts();
+            Random rand = new Random();
+            int randInt = rand.Next(6);
+            Console.WriteLine(randInt);
+
+            if(randInt == 0) { 
+                BarrackA.newCart(); }
+            else if(randInt == 1){ BarrackB.newCart(); }
+            else if(randInt == 2){ BarrackC.newCart(); }
+
             if (!finished) { MyApp.myView.drawField(points); }
             else {
                 ended = true;
@@ -360,14 +366,14 @@ namespace Modl3_Joost_Stijn.Model
             }
 
             Random random = new Random();
-            if ((random.Next(100) % 20) == 0)
+            if (random.Next(10) == 1)
             {
                 if (FirstUpperWater.MyBoat == null && FirstUpperWater.Next.MyBoat == null && FirstUpperWater.Next.Next.MyBoat == null)
                 {
                     FirstUpperWater.newBoat();
                 }
             }
-            if ((random.Next(100) % 20) == 0)
+            if (random.Next(10) == 0)
             {
                 if (FirstDownWater.MyBoat == null && FirstDownWater.Next.MyBoat == null && FirstDownWater.Next.Next.MyBoat == null)
                 {
@@ -405,12 +411,15 @@ namespace Modl3_Joost_Stijn.Model
 
         public void GameLoop()
         {
+            int sleepTime = 2000;
             while (running) 
             {
                 if (started)
                 {
-                    Thread.Sleep(1000);
+                    Thread.Sleep(sleepTime);
                     doStep();
+                    sleepTime -= sleepTime/50;
+                    if (sleepTime < 500) { sleepTime = 500; }
                 }
             }
         }

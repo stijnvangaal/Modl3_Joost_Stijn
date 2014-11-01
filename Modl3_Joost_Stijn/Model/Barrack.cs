@@ -7,12 +7,6 @@ namespace Modl3_Joost_Stijn.Model
 {
     class Barrack : Track
     {
-
-        public void generateCart()
-        {
-
-        }
-
         public void newCart()
         {
             Cart = new Cart();

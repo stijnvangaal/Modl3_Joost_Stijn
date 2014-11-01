@@ -15,7 +15,7 @@ namespace Modl3_Joost_Stijn.Model
         public Boat(Game game)
         {
             this.game = game;
-            Capacity = 1;
+            Capacity = 8;
             Cargo = 0;
         }
 

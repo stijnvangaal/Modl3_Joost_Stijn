@@ -31,12 +31,21 @@ namespace Modl3_Joost_Stijn.View
         {
             Console.WriteLine("Gold Fever");
             Console.WriteLine();
+            Console.WriteLine("   1 2   5");
             drawWater(FirstUpperWater);
             drawTracks();
             drawWater(FirstDownWater);
+            Console.WriteLine("      3 4");
 
             Console.WriteLine();
             Console.WriteLine("press spaceBar to begin. press esc to exit.");
+            Console.WriteLine();
+            Console.WriteLine("Legenda");
+            Console.WriteLine();
+            Console.WriteLine(" - track                 " + (char)127 + " filled cart           " + (char)34 + "  empty cart ");
+            Console.WriteLine(" ` switch up             , switch down           K coast ");
+            Console.WriteLine(" % cart on switch up     " + (char)247 + " cart on track down    " + (char)94 + " cart on coast ");
+            Console.WriteLine(" ~ water                 <0> boat (with index of cargo) ");
         }
 
         public void endMessage(int Points, int steps)
@@ -44,9 +53,11 @@ namespace Modl3_Joost_Stijn.View
             Console.Clear();
             Console.WriteLine("Gold Fever");
             Console.WriteLine();
+            Console.WriteLine("   1 2   5");
             drawWater(FirstUpperWater);
             drawTracks();
             drawWater(FirstDownWater);
+            Console.WriteLine("      3 4");
 
             Console.WriteLine();
             Console.WriteLine("GAME OVER");
@@ -63,13 +74,21 @@ namespace Modl3_Joost_Stijn.View
             Console.WriteLine();
             Console.WriteLine("Points: {0}", points);
             Console.WriteLine();
-
+            Console.WriteLine("   1 2   5");
             drawWater(FirstUpperWater);
             drawTracks();
             drawWater(FirstDownWater);
+            Console.WriteLine("      3 4");
 
             Console.WriteLine("Press any switch number. Or esc to exit");
             Console.WriteLine("Switches are numbered from left to right: 1-5");
+            Console.WriteLine();
+            Console.WriteLine("Legenda");
+            Console.WriteLine();
+            Console.WriteLine(" - track                 " + (char)127 + " filled cart           " + (char)34 + "  empty cart ");
+            Console.WriteLine(" ` switch up             , switch down           K coast ");
+            Console.WriteLine(" % cart on switch up     " + (char)247 + " cart on track down    " + (char)94 + " cart on coast ");
+            Console.WriteLine(" ~ water                 <0> boat (with index of cargo) ");
         }
 
         private void drawWater(Water firstWater)
