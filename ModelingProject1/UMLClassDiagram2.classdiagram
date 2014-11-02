@@ -1,0 +1,288 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="642adbf1-c872-4411-887e-d007ea8206ba" name="UMLClassDiagram2" linkedPackageId="556af8a1-ab8a-4d11-b710-3d103b2cfbbc" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="8b3e62f4-684e-47ad-9cf2-83e4f7cbeebd">
+      <profileInstance Id="2d38597c-c315-498c-8a38-88388f9f5ef4" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="07434a4a-e753-44db-b7c9-50abce2d2a5c">
+      <profileInstance Id="84118ab5-56df-427b-8daf-aeb78473f909" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="a8fce57f-693e-4a58-9c46-2109b322c321" name="Track" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="3479c836-0019-4e7b-8edb-8087f0e34214" />
+        <targetEnds>
+          <association Id="8117b493-0099-4d68-8c1b-ce3d9014c23e" isDerived="false" sourceEndRoleName="Track" targetEndRoleName="Track" isLeaf="false" isAbstract="false">
+            <classMoniker Id="a8fce57f-693e-4a58-9c46-2109b322c321" LastKnownName="Track" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="7bfdf85f-428c-4984-97c1-1a8176d5f8db" name="Track" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString Id="287d00b1-6510-4deb-b841-86c34c34dbe8" name="Lower" value="0">
+                      <elementDefinition Id="11950843-4080-4cba-bc29-5d5014c85890" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="98f05b78-19d8-4e57-bc8d-10054bdc2c5d" name="Upper" value="2">
+                      <elementDefinition Id="81479641-d26e-472a-9696-c1086920d7f1" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="8fb99143-1c98-44a5-a87b-7ef9b682a908" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="bc926370-dc63-49cf-bbd7-35480f480dd6" name="Track" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <lowerValueInternal>
+                    <literalString Id="bb774239-7fbd-4306-8c9d-e7856f77eeb8" name="Lower" value="0">
+                      <elementDefinition Id="a7083cf1-4951-42d8-a8a9-f4ca889376de" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="295b95d8-469a-4bd3-a52a-5e481be0096e" name="Upper" value="2">
+                      <elementDefinition Id="813813b0-69e1-4af2-866b-409996866ee4" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="42662418-0924-48a0-81be-9923d6da8944" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="f90e6aa1-da4c-4046-bf01-f7b314f5f7b9" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="bb1958a6-35c9-4c77-8606-dc3700a4bf62" name="Next" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="3390d83f-2f73-4679-ac57-895cab04e0a8" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="9c5ef503-64f0-4076-9b19-83decc8752bd" LastKnownName="Track" />
+            </type_NamedElement>
+          </property>
+          <property Id="dc5bec82-6a47-4ab6-a079-9e222cb7ced2" name="Previous" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="560075f3-c318-48fe-adc5-248a48d5d5f4" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="d773af4a-14cf-4d9e-a00c-748da517059a" LastKnownName="Track" />
+            </type_NamedElement>
+          </property>
+          <property Id="4e2df02c-65e5-4171-984e-1e5699657e9e" name="Cart" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="6b8fa76d-7606-4d5b-997e-a8b10fd45851" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="115cb6d3-d926-47c4-965c-064ede79522a" LastKnownName="Cart" />
+            </type_NamedElement>
+          </property>
+          <property Id="938f672d-7f2a-4af5-bfd1-71902626c00d" name="IsLast" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="ede3a407-eb7f-4260-b4ab-c4c978e033bc" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="47e8dc4b-665c-4a93-bff8-cfc5e7605b8a" LastKnownName="Boolean" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="ddfa744b-9050-42c0-a686-b98e7f1b6e3f" name="MoveCart" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="2872e625-3922-41ef-b9c5-e7003a5c8394" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="4298b9dd-ed4b-489f-9368-f44be1117bf4" direction="Return">
+                  <elementDefinition Id="e0599d6c-cfb3-4798-8e04-cd79b6439930" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="f4a618c3-6de5-4e28-b983-8198effd26d5" LastKnownName="Boolean" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="37e63b51-f3c0-47e3-94a7-68e5e76aad49" name="Coast" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="8d41eeb9-516c-4db4-8c5c-8febe646ab7b" />
+        <generalsInternal>
+          <generalization Id="e07e714f-9a38-4086-a2b1-d86dc677913e" isSubstitutable="false">
+            <classMoniker Id="a8fce57f-693e-4a58-9c46-2109b322c321" LastKnownName="Track" />
+            <elementDefinition Id="cb6112e8-3460-40ba-8629-e4091648cb42" />
+          </generalization>
+        </generalsInternal>
+        <ownedAttributesInternal>
+          <property Id="279441f1-92eb-4328-ba74-f0d703f2b52c" name="MyWater" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="bd519de7-511f-444c-845e-a4bb228efc8a" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="585b42a5-9890-4042-b402-17803f594aed" LastKnownName="Water" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="7a8334c3-0108-4c0e-8d8c-c46848688f69" name="LoadBoat" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="79fd8de6-adad-4fa5-be74-7102bc5d9f72" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="70ac99a0-e8d1-4a5d-8a84-9552b26831b3" name="Barrack" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="73d50c84-48cf-41e3-bbcd-134762ad95cc" />
+        <generalsInternal>
+          <generalization Id="dcd811e9-4371-490f-8e44-69542110b9c6" isSubstitutable="false">
+            <classMoniker Id="a8fce57f-693e-4a58-9c46-2109b322c321" LastKnownName="Track" />
+            <elementDefinition Id="a1760050-d015-44dd-8304-095aed23b0fd" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation Id="9fb7c219-3a6c-42d7-b861-e064be827b92" name="NewCart" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="efd62da6-e570-4408-9bf7-7d1c86cbdc2f" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="4db2511a-da11-4d8c-a03d-d9adb808a377" name="Switch" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="3d430d36-637d-45ea-9a2f-c7cb62b809d4" />
+        <generalsInternal>
+          <generalization Id="95ed6ecc-131c-4f60-83fd-0fb0d403bdff" isSubstitutable="false">
+            <classMoniker Id="a8fce57f-693e-4a58-9c46-2109b322c321" LastKnownName="Track" />
+            <elementDefinition Id="86f3915e-c7f4-4bd6-b9f0-8b43bedbb462" />
+          </generalization>
+        </generalsInternal>
+        <ownedAttributesInternal>
+          <property Id="264755ca-2ebf-4b58-9f1f-19567b4653a6" name="Up" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="f18331ca-2bfa-4f70-8ecf-bd39ba0cb18f" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="e0c3ffe2-e679-4950-a7ce-25384e98be73" LastKnownName="Boolean" />
+            </type_NamedElement>
+          </property>
+          <property Id="bc198c16-600b-4230-8db6-161fda78a51f" name="IsSplit" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="11d4bf01-5e91-4025-b14b-a8e1f46b6b5c" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="4c80f52e-4266-40f0-ac5b-6fdb6de83508" LastKnownName="Boolean" />
+            </type_NamedElement>
+          </property>
+          <property Id="f02a6e6f-2147-44a8-9daa-8b6ff9b4084e" name="NextUp" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="704c436b-b8cc-44ec-9ef5-b4bdf921ef07" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="32d1e510-b1cd-4a65-a981-690de1c6b77f" LastKnownName="Track" />
+            </type_NamedElement>
+          </property>
+          <property Id="adb2f4cc-53cb-4309-a4ad-2b9edb5eddd8" name="NextDown" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="0f530c71-8458-42f5-b959-4680c451d560" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="ef532000-f7b0-4fd2-a6b3-f9ef12247a7f" LastKnownName="Track" />
+            </type_NamedElement>
+          </property>
+          <property Id="b34aea77-e36e-4662-9b42-4035565362f6" name="PreviousUp" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="b1f00274-9468-407c-99ec-5fb5078c1615" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="609399cb-d264-420a-aebb-eb5f67a9ea23" LastKnownName="Track" />
+            </type_NamedElement>
+          </property>
+          <property Id="4989b42d-8e58-4c97-965f-8be3e93db57d" name="PreviousDown" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="ca48a118-05fe-4515-b6b7-0f4fd15f43f3" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="377b4b9c-7952-47b4-857f-926695bb1741" LastKnownName="Track" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="6252410a-6b68-4c3b-bf05-89dc6405f173" name="Switch" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="ab75a1fd-ebf6-485a-9521-ad0db74f9261" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="039360c6-5fd2-408b-a502-16dbd4ed45ab" name="Boolean isSplit" direction="In" isUnique="false">
+                  <elementDefinition Id="fadfec9c-16b9-4ac5-b0cf-5d56ee70854d" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="29f54857-4c60-43e4-8f2b-56c87be85146" name="change" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="066d3d3c-8340-406b-87bd-bfe6d3ed1cce" />
+          </operation>
+          <operation Id="846a15a2-c387-4dd1-915c-98ccb4849205" name="moveCart" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="f322825c-bd21-443e-8534-bf1e076b7791" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="fd96b60a-243a-4272-8978-d26a3b78ca79" direction="Return">
+                  <elementDefinition Id="3e2c550b-2c1d-410a-b319-bab17d6f0aa3" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="cf88b8dd-f4b4-4b3d-ba27-eb50168f1695" LastKnownName="Boolean" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="9c5ef503-64f0-4076-9b19-83decc8752bd" name="Track" isAbstract="false" isLeaf="false" cachedFullName="ModelingProject1::Track">
+        <elementDefinition Id="3479c836-0019-4e7b-8edb-8087f0e34214" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="d773af4a-14cf-4d9e-a00c-748da517059a" name="Track" isAbstract="false" isLeaf="false" cachedFullName="ModelingProject1::Track">
+        <elementDefinition Id="3479c836-0019-4e7b-8edb-8087f0e34214" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="115cb6d3-d926-47c4-965c-064ede79522a" name="Cart" isAbstract="false" isLeaf="false" cachedFullName="Cart">
+        <elementDefinition Id="79f6e2de-a249-4c15-a093-88936f742168" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="47e8dc4b-665c-4a93-bff8-cfc5e7605b8a" name="Boolean" isAbstract="false" isLeaf="false" cachedFullName="Boolean">
+        <elementDefinition Id="8943dc84-709e-4f62-b15a-a3273aa6f165" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="f4a618c3-6de5-4e28-b983-8198effd26d5" name="Boolean" isAbstract="false" isLeaf="false" cachedFullName="Boolean">
+        <elementDefinition Id="8943dc84-709e-4f62-b15a-a3273aa6f165" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="585b42a5-9890-4042-b402-17803f594aed" name="Water" isAbstract="false" isLeaf="false" cachedFullName="Water">
+        <elementDefinition Id="3716e541-ac33-44d2-b640-59377c2ea373" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="e0c3ffe2-e679-4950-a7ce-25384e98be73" name="Boolean" isAbstract="false" isLeaf="false" cachedFullName="Boolean">
+        <elementDefinition Id="8943dc84-709e-4f62-b15a-a3273aa6f165" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="4c80f52e-4266-40f0-ac5b-6fdb6de83508" name="Boolean" isAbstract="false" isLeaf="false" cachedFullName="Boolean">
+        <elementDefinition Id="8943dc84-709e-4f62-b15a-a3273aa6f165" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="32d1e510-b1cd-4a65-a981-690de1c6b77f" name="Track" isAbstract="false" isLeaf="false" cachedFullName="ModelingProject1::Model::Track">
+        <elementDefinition Id="89d342cd-b8e4-4c50-875b-4d3fc1d7a665" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="ef532000-f7b0-4fd2-a6b3-f9ef12247a7f" name="Track" isAbstract="false" isLeaf="false" cachedFullName="ModelingProject1::Track">
+        <elementDefinition Id="3479c836-0019-4e7b-8edb-8087f0e34214" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="609399cb-d264-420a-aebb-eb5f67a9ea23" name="Track" isAbstract="false" isLeaf="false" cachedFullName="ModelingProject1::Track">
+        <elementDefinition Id="3479c836-0019-4e7b-8edb-8087f0e34214" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="377b4b9c-7952-47b4-857f-926695bb1741" name="Track" isAbstract="false" isLeaf="false" cachedFullName="ModelingProject1::Track">
+        <elementDefinition Id="3479c836-0019-4e7b-8edb-8087f0e34214" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="cf88b8dd-f4b4-4b3d-ba27-eb50168f1695" name="Boolean" isAbstract="false" isLeaf="false" cachedFullName="Boolean">
+        <elementDefinition Id="8943dc84-709e-4f62-b15a-a3273aa6f165" />
+      </referencedType>
+    </packageHasNamedElement>
+  </packagedElements>
+  <package Id="556af8a1-ab8a-4d11-b710-3d103b2cfbbc" name="ModelingProject1">
+    <elementDefinition Id="65504c92-0b5a-4cee-8f4b-84755c405ccb" />
+  </package>
+</logicalClassDesignerModel>

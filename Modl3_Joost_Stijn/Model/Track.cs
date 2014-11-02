@@ -12,14 +12,7 @@ namespace Modl3_Joost_Stijn.Model
         public Cart Cart { get; set; }
         public Boolean IsLast { get; set; }
 
-        public Track()
-        {
 
-        }
-
-        public void next(Track newNext){
-            Next = newNext;
-        }
 
         //if collision is made. return true
         public Boolean moveCart()

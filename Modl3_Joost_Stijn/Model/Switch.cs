@@ -27,17 +27,6 @@ namespace Modl3_Joost_Stijn.Model
             }
         }
 
-        public void previous(Track newPreviousUp, Track newPreviousDown)
-        {
-            PreviousUp = newPreviousUp;
-            PreviousDown = newPreviousDown;
-        }
-
-        public void next(Track newNextUp, Track newNextDown)
-        {
-            NextUp = newNextUp;
-            NextDown = newNextDown;
-        }
 
         public void change()
         {

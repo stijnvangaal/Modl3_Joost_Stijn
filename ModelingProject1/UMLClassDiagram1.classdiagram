@@ -77,6 +77,16 @@
                     </associationHasOwnedEnds>
                     <associationHasOwnedEnds>
                       <memberEnd Id="aec3c7ab-f4c8-4f62-a042-4a82d04fb9c2" name="Track" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                        <lowerValueInternal>
+                          <literalString Id="e5901217-dbf8-4277-9378-9de0138158a6" name="Lower" value="n">
+                            <elementDefinition Id="ed998c3e-679a-4afd-ae5d-6979979e50a8" />
+                          </literalString>
+                        </lowerValueInternal>
+                        <upperValueInternal>
+                          <literalString Id="6f0c4249-7529-478c-a106-b1f8eef4d307" name="Upper" value="n">
+                            <elementDefinition Id="ab8674d0-d38f-495e-b693-8b6a7088c0fe" />
+                          </literalString>
+                        </upperValueInternal>
                         <elementDefinition Id="3b749acd-2014-4d98-81e7-45b0abf8dd8f" />
                       </memberEnd>
                     </associationHasOwnedEnds>
@@ -93,6 +103,16 @@
                     </associationHasOwnedEnds>
                     <associationHasOwnedEnds>
                       <memberEnd Id="e6165237-810b-46d6-a42b-2e5b353974ba" name="Water" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                        <lowerValueInternal>
+                          <literalString Id="a7499846-cf93-451f-b0e0-92f13b614cf2" name="Lower" value="n">
+                            <elementDefinition Id="fc2ee91f-ae4f-4362-93b1-7df3c5a36c3b" />
+                          </literalString>
+                        </lowerValueInternal>
+                        <upperValueInternal>
+                          <literalString Id="76e75a5c-6db5-4e97-93bf-c4b6a511f2de" name="Upper" value="n">
+                            <elementDefinition Id="127201c0-63d2-4b1c-9c27-1fa1a2de0b5d" />
+                          </literalString>
+                        </upperValueInternal>
                         <elementDefinition Id="8dc9876e-f463-4c65-8a52-ca01d505e087" />
                       </memberEnd>
                     </associationHasOwnedEnds>
@@ -207,6 +227,16 @@
                   <relationshipOwnedElementsInternal>
                     <associationHasOwnedEnds>
                       <memberEnd Id="b5661fbb-ccd6-404f-b8b7-fd9bfa5a83d9" name="Coast" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                        <lowerValueInternal>
+                          <literalString Id="8c47995f-7bb6-423c-912b-53b64fde4ce3" name="Lower" value="0">
+                            <elementDefinition Id="17563e7b-fd6c-4495-9fbb-d54653e1a2fe" />
+                          </literalString>
+                        </lowerValueInternal>
+                        <upperValueInternal>
+                          <literalString Id="43cc8807-a747-45be-b255-09fb9fe98591" name="Upper" value="1">
+                            <elementDefinition Id="ce5daae3-f341-433f-93ba-6acab0ecf9ea" />
+                          </literalString>
+                        </upperValueInternal>
                         <elementDefinition Id="d218f469-7dc7-4c37-9da9-72e19c71f5c1" />
                       </memberEnd>
                     </associationHasOwnedEnds>
@@ -240,13 +270,23 @@
                   <relationshipOwnedElementsInternal>
                     <associationHasOwnedEnds>
                       <memberEnd Id="9ea20f8f-34c3-48e7-a6de-5160f1aaded1" name="Water" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                        <lowerValueInternal>
+                          <literalString Id="da36e5c1-1904-4c85-a44a-23d02ef63e7b" name="Lower" value="0">
+                            <elementDefinition Id="8b1692ca-f2d9-49c8-963c-6cc322988799" />
+                          </literalString>
+                        </lowerValueInternal>
+                        <upperValueInternal>
+                          <literalString Id="5c11fe5d-48dd-4ab2-97d6-1fc88e64ffd5" name="Upper" value="2">
+                            <elementDefinition Id="82d8305a-fe73-4c70-87a6-be1cd1f56bf3" />
+                          </literalString>
+                        </upperValueInternal>
                         <elementDefinition Id="525028e1-8224-4bf4-af89-c5473003cd7d" />
                       </memberEnd>
                     </associationHasOwnedEnds>
                     <associationHasOwnedEnds>
                       <memberEnd Id="a96ebf73-adf9-4316-996d-a3b584360b30" name="Water" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
                         <lowerValueInternal>
-                          <literalString Id="086852d4-743e-488f-a429-e8e1779bf63c" name="Lower" value="2">
+                          <literalString Id="086852d4-743e-488f-a429-e8e1779bf63c" name="Lower" value="0">
                             <elementDefinition Id="bb77da03-966e-4e38-8f03-7ef8158170bb" />
                           </literalString>
                         </lowerValueInternal>
@@ -288,6 +328,17 @@
                   <elementDefinition Id="1aea6a53-0c14-475f-875c-e9366e8aaeab" />
                 </association>
               </targetEnds>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="e6da5f2c-1284-4153-bbd1-7b913927f867" name="Barrack" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="e70add6f-ae1e-4b1b-a539-d2a7b16d3e9e" />
+              <generalsInternal>
+                <generalization Id="8bdcdd6b-579b-4ce3-9413-f432b3682af9" isSubstitutable="false">
+                  <classMoniker Id="3590e5b5-542e-4c28-bfdb-fd032f9de357" LastKnownName="Track" />
+                  <elementDefinition Id="8efe73a5-0a35-4da4-bf1b-e3624e0a4d36" />
+                </generalization>
+              </generalsInternal>
             </class>
           </packageHasNamedElement>
         </packagedElements>
