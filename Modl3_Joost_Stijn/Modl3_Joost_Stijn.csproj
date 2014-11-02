@@ -56,7 +56,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="View\View.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="SequenceDiagram1.sequencediagram" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="SequenceDiagram1.sequencediagram.layout">
+      <DependentUpon>SequenceDiagram1.sequencediagram</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
